@@ -1,16 +1,16 @@
 html {
     color: #cad3d6;
     min-height: 100%;
-    background: -webkit-gradient(linear , 0 100, 0 98%, from(#163346), to(#000309) );
-    background-color: #123;
+    background: #202020 center;
+    margin: 0 auto;
     padding: 0;
-    margin: 0;
 }
 body {
-    max-width: 1200px;
+    color: #bbbbbb;
     position: relative;
     margin: 40px auto 15px;
-    font: 100 14px/1.5 "Trebuchet MS", Helvetica, SimSun, sans-serif;
+    font-family: sans-serif, Monospace, serif, Georgia, Palatino;
+    font-size: 14px;
 }
 p, ul, li, table {
     margin: 0;
@@ -18,17 +18,17 @@ p, ul, li, table {
 }
 
 a {
-    color: #0df;
+    color: #0080ff;
     text-decoration: none;
     padding-bottom: 1px;
 }
+a:visited {
+    color: #ff44ff;
+}
 a:hover {
-    color: #5ef;
+    color: #7abdf;
     padding-bottom: 0;
     border-bottom: 1px solid #468;
-}
-a:visited {
-    color: #6ac;
 }
 
 input:focus, a:focus, button:focus {
@@ -39,6 +39,7 @@ input:focus, a:focus, button:focus {
 
 h1, h2, h3, h4, h5, h6 { 
     font-family: "Microsoft Yahei", sans-serif;
+    color: #bb8844;
     margin: 0;
     padding: 0.15em 0;
 }
@@ -352,7 +353,7 @@ textarea {
 }
 
 /*----*/
-#no-comment { /* 用于指示不显示评论 */
+#no-comment { /* 用于指示不显示评�?*/
     display: none;
 }
 
