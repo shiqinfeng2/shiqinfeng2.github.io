@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
@@ -8,65 +7,86 @@
 
 
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="/style.css" type="text/css" />
 
 
-<title>这里填写标题, 注意为html注释格式, 并且开头伪3个横杠</title>
-<meta name="keywords" content="填写关键字, 以半角逗号分割">
-
-<!--SyntaxHighlighter-->
-<script type="text/javascript" src="scripts/shCore.js"></script>
-<script type="text/javascript" src="scripts/shBrushPython.js"></script>
-<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
-<link type="text/css" rel="stylesheet" href="styles/shCoreFadeToGrey.css"/>
-<script type="text/javascript">SyntaxHighlighter.all();</script>
 
 </head>
 
 
 <body>
-<div id="wrapper">
+<div id="all">
 
-<div id="header">
-    <p class="header_titleline">Mike的分享空间</p>
-    <p class="header_subline"><a href="/index.html">首页</a></p>
+<div id="all">
+    <div id="header">
+        <ul id="top-nav">
+            <li>
+            <a href="/index.html">Wiki首页</a>
+            </li>
+            <li>
+            <a href="http://www.ohlinux.com">Blog首页</a>
+            </li>
+            <li>
+            <a href="/about.html">about</a>
+            </li>
+        </ul>
 </div>
 
-<h1>这里填写标题, 注意为html注释格式, 并且开头伪3个横杠</h1>
 
  <!--if(title)-->
 
+<p>目录:</p>
+<div id="TOC">
+<ul>
+<li><a href="#hehe">hehe</a><ul>
+<li><a href="#haah">haah</a></li>
+</ul></li>
+</ul>
+</div>
  <!--if(toc)-->
 
-<!---title:这里填写标题, 注意为html注释格式, 并且开头伪3个横杠-->
-<!---keywords:填写关键字, 以半角逗号分割-->
-<div id="&#20108;&#32423;&#26631;&#39064;&#20316;&#20026;&#32593;&#39029;&#20013;&#30340;&#39030;&#32423;&#26631;&#39064;-&#22240;&#20026;&#19968;&#32423;&#26631;&#39064;&#24050;&#32463;&#20316;&#20026;&#32593;&#39029;&#30340;title&#20102;."
-><h2
-  >二级标题作为网页中的顶级标题, 因为一级标题已经作为网页的title了.</h2
-  ><div id="&#19977;&#32423;&#26631;&#39064;&#20316;&#20026;&#32593;&#39029;&#20013;&#30340;&#20108;&#32423;"
-  ><h3
-    >三级标题作为网页中的二级</h3
-    ><p
-    >正文内容</p
-    ><pre
-    ><code
-      >这里是&lt;pre&gt;
-</code
-      ></pre
-    ><p
-    ><a href="test.html"
-      >链接示例</a
-      ></p
-    ></div
-  ></div
->
+<p>前面有蚊子[[index.mkd]]</p>
+<h1 id="hehe">hehe</h1>
+<pre><code>        ceshiyi xai
+测试一下，
+     史钦锋在这里的wiki</code></pre>
+<p>shi 前面有蚊子<a href="wiki/text.html">连接看这里</a></p>
+<p><a href="text.html">other</a></p>
+<pre><code>再次
+再再次测试</code></pre>
+<h2 id="haah">haah</h2>
+<pre><code>[[测试两下]]           
+测试三峡</code></pre>
+<p><a href="wiki/linux/cmd/top_cmd.html" title="可选">还是测试</a></p>
+<p>[[<em>dif</em>f]] [[==fdfsd==]]</p>
 
-<div id="footer">
-    <p class="footer_titleline">Human knowledge belongs to the world</p>
-    <p class="footer_subline">Contact: wytabc@126.com</p>
-    <p class="footer_subline">声明: 本站如有侵权行为请及时通知至以上邮箱</p>
+<div id="right_side">
+    <p>Right side show</p>
+    <p>Right side showdfkalfjkdls fakdsl a;fkdsl ;fksld; faj</p>
+    <p>Right side show fkdsa;lf kdslaf ;dkslaf; kdls;a fkdls;a fkdls;af ksd;a fk</p>
+    <p>Right f dsliaf ;dsafi;ds afi; side show fkdsa;lf kdslaf ;dkslaf; kdls;a fkdls;a fkdls;af ksd;a fk</p>
 </div>
-</div> <!--wrapper-->
+<!--Baidu tongji-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c33f8eb1bbd2cf29ae19a3492ccca0c6";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--Baidu tongji-->
+<div id="date"> </div>
+<div id="liuyan">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1789306" async=""></script>
+    <!-- UY END -->
+</div>
+<div id="footer">
+    <p class="footer_subline">Contact: ajian521@gmail.com</p>
+</div>
+</div> <!--all-->
 </body>
 </html>
-
