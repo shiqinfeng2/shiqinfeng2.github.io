@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
@@ -8,32 +7,47 @@
 
 
 
-<link rel="stylesheet" href="../../../../style.css" type="text/css" />
+<link rel="stylesheet" href="/style.css" type="text/css" />
 
 
 <title>Linux常用命令TOP</title>
-
-<!--SyntaxHighlighter-->
-<script type="text/javascript" src="scripts/shCore.js"></script>
-<script type="text/javascript" src="scripts/shBrushPython.js"></script>
-<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
-<link type="text/css" rel="stylesheet" href="styles/shCoreFadeToGrey.css"/>
-<script type="text/javascript">SyntaxHighlighter.all();</script>
 
 </head>
 
 
 <body>
-<div id="wrapper">
+<div id="all">
 
-<div id="header">
-    <p class="header_titleline">Mike的分享空间</p>
-    <p class="header_subline"><a href="/index.html">首页</a></p>
+<div id="all">
+    <div id="header">
+        <ul id="top-nav">
+            <li>
+            <a href="/index.html">Wiki首页</a>
+            </li>
+            <li>
+            <a href="http://www.ohlinux.com">Blog首页</a>
+            </li>
+            <li>
+            <a href="/about.html">about</a>
+            </li>
+        </ul>
 </div>
-<h1>Linux常用命令TOP</h1>
+<p>date: 2014.10.29</p>
 
  <!--if(title)-->
 
+<p>目录:</p>
+<div id="TOC">
+<ul>
+<li><a href="#终端操作">终端操作</a></li>
+<li><a href="#文件目录操作">文件目录操作</a></li>
+<li><a href="#查看系统">查看系统</a></li>
+<li><a href="#文件操作">文件操作</a></li>
+<li><a href="#进程操作">进程操作</a></li>
+<li><a href="#用户操作">用户操作</a></li>
+<li><a href="#网络操作">网络操作</a></li>
+</ul>
+</div>
  <!--if(toc)-->
 
 <!---title:Linux常用命令TOP-->
@@ -86,11 +100,27 @@ nmap -sP 172.30.4.0/24  //在这个网段内有多少用户在我的主机上操
 rsync -P  //同步时显示进度
 iptraf -g  //查看各个接口的流量</code></pre>
 
-<div id="footer">
-    <p class="footer_titleline">Human knowledge belongs to the world</p>
-    <p class="footer_subline">Contact: wytabc@126.com</p>
-    <p class="footer_subline">声明: 本站如有侵权行为请及时通知至以上邮箱</p>
+<!--Baidu tongji-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c33f8eb1bbd2cf29ae19a3492ccca0c6";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--Baidu tongji-->
+<div id="date"> </div>
+<div id="liuyan">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1789306" async=""></script>
+    <!-- UY END -->
 </div>
-</div> <!--wrapper-->
+<div id="footer">
+    <p class="footer_subline">Contact: ajian521@gmail.com</p>
+</div>
+</div> <!--all-->
 </body>
 </html>
