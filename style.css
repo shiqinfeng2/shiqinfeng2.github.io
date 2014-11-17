@@ -60,7 +60,7 @@ table, th, td {
 #header {
     background-color: #111;
     height: 200px;
-    border-bottom: 1px solid #666666;
+    border-bottom: 1px dashed #246;
     border-top: 1px dashed #246;
 }
 
@@ -80,8 +80,8 @@ table, th, td {
 #top-nav {
     position: relative; /*absolute*/
     /*top: -25px;*/
-    bottom: -25px;
-    width: 320px;
+    bottom: -20px;
+    width: 500px;
     margin: 0 auto;
     overflow: hidden;
     zoom: 1;
