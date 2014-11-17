@@ -8,9 +8,6 @@ set nocompatible
 " Set backspace
 set backspace=eol,start,indent
 
-" Set colors
-set t_Co=256
-
 " Lines folding
 set foldenable
 set foldnestmax=2
@@ -20,7 +17,7 @@ set foldmethod=syntax
 filetype plugin indent on
 
 " Set fileencodings
-set fileencodings=utf-8,chinese,latin-1 ",ucs-bom,gbk,big5
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936 "chinese,latin-1,
 let $LANG="zh_CN.UTF-8"
 set termencoding=utf-8
 set encoding=utf-8
@@ -71,9 +68,9 @@ set directory=~/.vim/swap,/tmp
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+set t_Co=256
 " Set colorscheme
-colorscheme desert
+colorscheme molokai  "jellybeans " desert
 
 " Enable syntax highlight
 syntax on
@@ -103,7 +100,7 @@ set laststatus=2
 " Allow to display incomplete line
 set display=lastline
 
-"当vim进行编辑时，如果命令错误，会发出一个响声，该设置去掉响声 
+"当vim进行编辑时，如果命令错误，会发出一个响声，该设置去掉响�?
 "set vb t_vb= 
 
 "设置匹配模式，类似当输入一个左括号时会匹配相应的那个右括号 
@@ -223,13 +220,13 @@ nnoremap <C-\>e :scs find e <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
 nnoremap <C-\>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 
-"映射cscope命令： cs find c|d|e|f|g|i|s|t name
+"映射cscope命令�?cs find c|d|e|f|g|i|s|t name
 "nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>:copen<CR> "0或s:查找本C符号(可以跳过注释)
-"nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR> "1或g:查找本定义
+"nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR> "1或g:查找本定�
 "nmap <C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>:copen<CR> "3或c:查找调用本函数的函数
 "nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>:copen<CR> "4或t:查找本字符串
-"nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>:copen<CR> "6或e: 查找本 egrep 模式
-"nmap <C-@>f :cs find f <C-R>=expand("<cfile>")<CR><CR>:copen<CR> "7或f: 查找本文件
+"nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>:copen<CR> "6或e: 查找�?egrep 模式
+"nmap <C-@>f :cs find f <C-R>=expand("<cfile>")<CR><CR>:copen<CR> "7或f: 查找本文�
 "nmap <C-@>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>:copen<CR> "8或i:查找包含本文件的文件
 "nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>:copen<CR> "2或d:查找本函数调用的函数
 
@@ -298,11 +295,11 @@ let tagbar_width = 32
 let autocscope_menus = 0
 
 " Use context to decide completion type
-let SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "context"
 
 
 
-"vim-pathogen plugin 该插件可以将每个github的vim plugin工程单独放到bundle目录下
+"vim-pathogen plugin 该插件可以将每个github的vim plugin工程单独放到bundle目录�
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
@@ -310,7 +307,7 @@ call pathogen#infect()
 let VIMPRESS = [{'username':'cherrot',
                 \'blog_url':'http://www.cherrot.com/'
                 \}]
-"map <leader>P :BlogPreview<CR> 见 Mapping 一节
+"map <leader>P :BlogPreview<CR> �?Mapping 一�
 
 "同时搜索ctags和cscope的标签，并且cscope优先
 if has("cscope")
@@ -320,24 +317,24 @@ if has("cscope")
     set csverb
 endif
 
-"taglist插件，进行Tlist的设置
+"taglist插件，进行Tlist的设�
 "TlistUpdate可以更新tags
-"map <F3> :silent! Tlist<CR> //见Mapping一节
-let Tlist_Ctags_Cmd='ctags' "因为我们放在环境变量里，所以可以直接执行
-let Tlist_Use_Right_Window=1 "让窗口显示在右边，0的话就是显示在左边
-let Tlist_Show_One_File=0 "让taglist可以同时展示多个文件的函数列表，如果想只有1个，设置为1
+"map <F3> :silent! Tlist<CR> //见Mapping一�
+let Tlist_Ctags_Cmd='ctags' "因为我们放在环境变量里，所以可以直接执�
+let Tlist_Use_Right_Window=1 "让窗口显示在右边�?的话就是显示在左�
+let Tlist_Show_One_File=0 "让taglist可以同时展示多个文件的函数列表，如果想只�?个，设置�?
 let Tlist_File_Fold_Auto_Close=1 "非当前文件，函数列表折叠隐藏
 let Tlist_Exit_OnlyWindow=1 "当taglist是最后一个分割窗口时，自动推出vim
-let Tlist_Process_File_Always=0 "是否一直处理tags.1:处理;0:不处理。不是一直实时更新tags，因为没有必要
+let Tlist_Process_File_Always=0 "是否一直处理tags.1:处理;0:不处理。不是一直实时更新tags，因为没有必�
 let Tlist_Inc_Winwidth=0
 
 "OmniCppComplete Plugin 目前用neocomplcache
 
-"对NERD_commenter的设置,在光标所在行上，按ctrl+h变换注释,cm是多行注释,cu是取消注释
+"对NERD_commenter的设�?在光标所在行上，按ctrl+h变换注释,cm是多行注�?cu是取消注�
 let NERDShutUp=1
 
 "DoxygenToolkit插件配置
-"map fg : Dox<cr> //见Mapping一节
+"map fg : Dox<cr> //见Mapping一�
 let g:DoxygenToolkit_authorName="Cherrot Luo"
 let g:DoxygenToolkit_licenseTag="GPLv3\<enter>"
 let g:DoxygenToolkit_undocTag="DOXIGEN_SKIP_BLOCK"
@@ -347,7 +344,7 @@ let g:DoxygenToolkit_returnTag = "@return\t"
 let g:DoxygenToolkit_briefTag_funcName = "no"
 let g:DoxygenToolkit_maxFunctionProtoLines = 30
 
-"a.vim插件 :A，打开.cpp和.h对应的文件，:AV，分屏显示.cpp和.h对应的文件(无需配置)
+"a.vim插件 :A，打开.cpp�?h对应的文件，:AV，分屏显�?cpp�?h对应的文�?无需配置)
 
 "neocomplcache 代码补全插件
 let g:acp_enableAtStartup = 0
@@ -367,7 +364,7 @@ let g:neocomplcache_min_syntax_length = 1
 "    silent! execute "!unlink tmpcpp"
 "endif
 
-"cscope 函数定义  用cscope生成数据库，并添加到vim中
+"cscope 函数定义  用cscope生成数据库，并添加到vim�
 "function Do_CsTag()
 "    if(executable('cscope') && has("cscope") )
 "        if(g:iswindows!=1)
@@ -440,7 +437,7 @@ function Do_CsTag()
 endfunction
 
 
-"进行版权声明的设置
+"进行版权声明的设�
 "添加或更新头
 "function AddTitle()
 "    call append(0,"/*=============================================================================")
@@ -458,7 +455,7 @@ endfunction
 "    echohl WarningMsg | echo "Successful in adding the copyright." | echohl None
 "endf
 
-"更新最近修改时间和文件名
+"更新最近修改时间和文件�
 "function UpdateTitle()
 "    normal m'
 "    execute '/# *Last modified:/s@:.*$@\=strftime(":\t%Y-%m-%d %H:%M")@'
@@ -485,15 +482,15 @@ endfunction
 "let maplocalleader = ","
 
 " vimwiki
-let g:vimwiki_list = [{'path': '~/wiki-site-src/shiqinfeng2.github.io',
-\ 'path_html': '~/wiki-site-src/shiqinfeng2.github.io/html/',
+let g:vimwiki_list = [{'path': '~/syzfeng.github.io/',
+\ 'path_html': '~/syzfeng.github.io/html/',
 \ 'syntax': 'markdown',
 \ 'ext': '.mkd',
-\ 'template_path': '~/wiki-site-src/shiqinfeng2.github.io',
+\ 'template_path': '~/syzfeng.github.io/',
 \ 'template_default': 'template',
 \ 'template_ext': '.html'}]
-let g:vimwiki_camel_case = 0
-"let g:vimwiki_file_exts = 'c, cpp,  txt, h, hpp, sh, awk'
+let g:vimwiki_camel_case = 0 "?ص??շ?ƥ??
+"let g:vimwiki_file_exts = 'c, cpp,  txt, h, hpp, sh, awk'  "������.wiki��refer��һ����Ϊmy.cpp���ļ����ᱻĬ����չΪmy.cpp.html�����ѡ�����Vimwiki���������˵��ļ����Ͳ�������չ��
 let g:vimwiki_ext2syntax = {'.md':'markdown','.markdown':'markdown','.mdown':'markdown','.mkd':'markdown'}
 
 map <F4> <Plug>Vimwiki2HTML
@@ -504,12 +501,12 @@ imap <F3> <C-R>=strftime("%Y-%m-%d %I:%M %p")<CR>
 
 autocmd filetype go set dictionary=~/.vim/bundle/VimForGo/go.dict
 
-"判断前10行代码里面，是否有Last modified这个单词，
-"如果没有的话，代表没有添加过作者信息，需要新添加；
-"如果有的话，那么只需要更新即可
+"判断�?0行代码里面，是否有Last modified这个单词�
+"如果没有的话，代表没有添加过作者信息，需要新添加�
+"如果有的话，那么只需要更新即�
 "function TitleDet()
 "    let n=1
-"    "默认为添加
+"    "默认为添�
 "    while n < 10
 "        let line = getline(n)
 "        if line =~ '^\#\s*\S*Last\smodified:\S*.*$'

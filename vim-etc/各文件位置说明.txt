@@ -1,0 +1,2 @@
+.vimrc Â·¾¶£º ~/.vimrc
+colors/ Â·¾¶£º ~/.vim/colors/
