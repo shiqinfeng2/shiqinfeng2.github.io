@@ -80,8 +80,8 @@ table, th, td {
 #top-nav {
     position: relative; /*absolute*/
     /*top: -25px;*/
-    bottom: 25px;
-    width: 498px;
+    bottom: 1px;
+    width: 80px;
     margin: 0 auto;
     overflow: hidden;
     zoom: 1;
