@@ -81,7 +81,7 @@ table, th, td {
     position: relative; /*absolute*/
     /*top: -25px;*/
     bottom: -20px;
-    width: 500px;
+    left:50%;
     margin: 0 auto;
     overflow: hidden;
     zoom: 1;
