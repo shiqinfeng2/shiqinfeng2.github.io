@@ -80,7 +80,7 @@ table, th, td {
 #top-nav {
     position: relative; /*absolute*/
     /*top: -25px;*/
-    bottom: 2px;
+    bottom: -25px;
     width: 320px;
     margin: 0 auto;
     overflow: hidden;
@@ -89,8 +89,9 @@ table, th, td {
 
 #top-nav li {
     float: left;
+    left:50%;
     list-style: none;
-    margin-right: 10px;
+    /*margin-right: 10px;*/
 }
 #top-nav a{
     display: block;
