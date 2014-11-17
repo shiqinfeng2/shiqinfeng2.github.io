@@ -78,9 +78,9 @@ table, th, td {
 }
 
 #top-nav {
-    position: relative;
-    top: -25px;
-    width: 300px;
+    position: absolute; /*relative*/
+    top: 280px;
+    width: 400px;
     margin: 0 auto;
     overflow: hidden;
     zoom: 1;
