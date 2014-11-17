@@ -99,7 +99,8 @@ table, th, td {
 #footer {
     background-color: #111;
     border-top: 1px solid #666666;
-    height: 30;
+    border-bottom: 5px solid #666666;
+    height: 100;
 }
 
 .footer_titleline {
