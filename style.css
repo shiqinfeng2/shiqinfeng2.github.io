@@ -61,6 +61,7 @@ table, th, td {
     background-color: #111;
     height: 200px;
     border-bottom: 1px solid #666666;
+    border-top: 1px dashed #246;
 }
 
 .header_titleline {
@@ -78,8 +79,8 @@ table, th, td {
 
 #top-nav {
     position: relative;
-    top: -20px;
-    width: 640px;
+    top: -25px;
+    width: 300px;
     margin: 0 auto;
     overflow: hidden;
     zoom: 1;
