@@ -59,7 +59,7 @@ table, th, td {
 
 #header {
     background-color: #111;
-    height: 140px;
+    height: 200px;
     border-bottom: 1px solid #666666;
 }
 
@@ -67,7 +67,7 @@ table, th, td {
     color: #00ff00;
     font-size: 36px;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .header_subline {
@@ -78,8 +78,8 @@ table, th, td {
 
 #top-nav {
     position: relative;
-    top: -25px;
-    width: 380px;
+    top: -15px;
+    width: 996px;
     margin: 0 auto;
     overflow: hidden;
     zoom: 1;
