@@ -80,7 +80,7 @@ table, th, td {
 #top-nav {
     position: relative; /*absolute*/
     /*top: -25px;*/
-    bottom: 1px;
+    bottom: 10px;
     width: 180px;
     margin: 0 auto;
     overflow: hidden;
