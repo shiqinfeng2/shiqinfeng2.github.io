@@ -20,9 +20,13 @@ PANDOC_FLAG+=" --include-after-body pageframe/footer.html"
 
 # 预处理
 touch temp_head_keywords.html temp_title.html # 生成临时文件
-sed -n -e "1,3s/<!---title:\(.*\)-->/<title>\1<\/title>/p" $src > temp_head_keywords.html # 生成<head>中的标题标签
-sed -n -e "1,3s/<!---keywords:\(.*\)-->/<meta name=\"keywords\" content=\"\1\">/p" $src >> temp_head_keywords.html # 生成<head>中的关键字标签
-sed -n -e "1,3s/<!---title:\(.*\)-->/<h1>\1<\/h1>/p" $src > temp_title.html # 生成<body>中的标题标签<h1>
+sed -n -e "1,3s/<!---title:\(.\+\)-->/<title>\1<\/title>/p" $src > temp_head_keywords.html # 生成<head>中的标题标签
+sed -n -e "1,3s/<!---keywords:\(.\+\)-->/<meta name=\"keywords\" content=\"\1\">/p" $src >> temp_head_keywords.html # 生成<head>中的关键字标签
+sed -n -e "1,3s/<!---title:\(.\+\)-->/<h1>\1<\/h1>/p" $src > temp_title.html # 生成<body>中的标题标签<h1>
+#sed -n -e "s/<!---title:\(.\+\)-->/<title>\1<\/title>/p" $< > temp_head_keywords.html # 生成<head>中的标题标签
+#sed -n -e "s/<!---keywords:\(.\+\)-->/<meta name=\"keywords\" content=\"\1\">/p" $< >> temp_head_keywords.html # 生成<head>中的关键字标签
+#sed -n -e "s/<!---title:\(.\+\)-->/<h1>\1<\/h1>/p" $< > temp_title.html # 生成<body>中的标题标签<h1>
+
 sed -n -e "1,3s/<!---date:\(.*\)-->/<p>date: \1<\/p>/p" $src > temp_title.html # 生成<body>中的标题标签<p>时间
 cp utils/pandoctpl.html temp_pandoctpl.html
 # WIKI_TOPDIR替换为相对地址 {{{
