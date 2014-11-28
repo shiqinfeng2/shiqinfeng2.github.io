@@ -11,7 +11,7 @@ titilke
 
 ###三级标题
 
-[[三级内容[link]]](index.html)
+三级内容[link](index.html)
 [link](index.html)
 
 
