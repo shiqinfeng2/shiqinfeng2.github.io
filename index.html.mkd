@@ -1,8 +1,8 @@
-<!---title: syzfeng wiki -->
+<!---title:这里是syzfeng个人Wiki首页 -->
 <!---keywords:key-->
-<!---date:yyyy-mm-dd-->
+<!---date:yyyy.mm.dd-->
 
-titilke
+titile
 一级内容 [1-link](page1.html) [11-link](index.html) [111-link](test.html)
 
 ##二级标题
