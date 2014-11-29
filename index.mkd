@@ -1,9 +1,10 @@
-<!---title:这里是syzfeng个人Wiki首页 -->
-<!---keywords:key-->
-<!---date:yyyy.mm.dd-->
+<!---title:syzfeng维基世界-->
+  
 
-titile
-一级内容 [1-link](page1.html) [11-link](index.html) [111-link](test.html)
+这里是syzfeng的个人Wiki。基于vimwiki+markdown+pandoc+github搭建的维基世界。
+
+楼主是程序猿和攻城狮，也叫码农。所有记录都和专业相关，作为个人专业知识的管理和归档。
+
 
 ##二级标题
 
@@ -14,5 +15,4 @@ titile
 
 三级内容[link](index.html)
 [link](index.html)
-
 
