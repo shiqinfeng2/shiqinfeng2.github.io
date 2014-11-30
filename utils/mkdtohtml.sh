@@ -17,7 +17,7 @@ PANDOC_FLAG+=" --include-before-body temp_title.html"
 #PANDOC_FLAG+" --include-after-body pageframe/right_side.html" # 测边栏, 我目前没加, 可以预留以后放放广告啥的.
 PANDOC_FLAG+=" --include-after-body pageframe/footer_statistic.html" # 百度统计
 PANDOC_FLAG+=" --include-after-body pageframe/footer.html"
-PANDOC_FLAG+=" --include-after-body pageframe/SyntaxHighlighter.html"
+#PANDOC_FLAG+=" --include-after-body pageframe/SyntaxHighlighter.html"
 
 # 预处理
 touch temp_head_keywords.html temp_title.html # 生成临时文件
