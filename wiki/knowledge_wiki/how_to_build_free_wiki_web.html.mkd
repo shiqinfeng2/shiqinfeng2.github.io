@@ -1,4 +1,12 @@
 <!---title:用vimwiki+markdown+pandoc+github搭建免费个人wiki-->
+<!---date:2014-11-30 03:04 下午-->
 
+因为楼主并非从事网络前端开发工作，搭建wiki使用的技术不甚熟悉，能够完成此事，是完全参考两位前辈的文章
+（链接在这里：[1](http://www.mikewootc.com/wiki/tool/sitebuild/mikewiki.html) 和[2](http://wiki.ohlinux.com/wiki/tool/sitebuild/ohlinuxwiki.html))，在此表示感谢。不过两位对某些要点忽略跳过了（可能他们觉得不是技术难点），导致走了些弯路。楼主会尽量吧构建过程写完成，保证连续性。
 
-因为楼主从事的软件开发
+##长话短说
+搭建个人主页的方式很多，这种免费个人wiki的优劣请参考上面提到的文章，实现的功能也基本上满足了我的需求。只是我的环境和他们不太一样， 
+我是在windows下的[cygwin环境]()中实现的， 而不是他们的linux环境和mac环境，算是一种补充吧。
+
+##
+

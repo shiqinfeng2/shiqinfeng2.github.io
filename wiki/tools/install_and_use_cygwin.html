@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="/style.css" type="text/css" />
 
 
-<title>用vimwiki+markdown+pandoc+github搭建免费个人wiki</title>
+<title>cygwin的安装和使用</title>
 
 </head>
 
@@ -24,26 +24,28 @@
         <p class="header_subline">一切思考，都将在此记录</p>
         <p class="header_subline"><a href="/index.html">首页</a></p>
 </div>
-<h1>用vimwiki+markdown+pandoc+github搭建免费个人wiki</h1>
-<p>date: 2014-11-30 03:04 下午</p>
+<h1>cygwin的安装和使用</h1>
 
  <!--if(title)-->
 
 <p>目录:</p>
 <div id="TOC">
 <ul>
-<li><a href="#长话短说">长话短说</a></li>
-<li><a href="#section"></a></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#安装apt-cyg">安装apt-cyg</a></li>
 </ul>
 </div>
  <!--if(toc)-->
 
-<!---title:用vimwiki+markdown+pandoc+github搭建免费个人wiki-->
-<!---date:2014-11-30 03:04 下午-->
-<p>因为楼主并非从事网络前端开发工作，搭建wiki使用的技术不甚熟悉，能够完成此事，是完全参考两位前辈的文章 （链接在这里：<a href="http://www.mikewootc.com/wiki/tool/sitebuild/mikewiki.html">1</a> 和<a href="http://wiki.ohlinux.com/wiki/tool/sitebuild/ohlinuxwiki.html">2</a>)，在此表示感谢。不过两位对某些要点忽略跳过了（可能他们觉得不是技术难点），导致走了些弯路。楼主会尽量吧构建过程写完成，保证连续性。</p>
-<h2 id="长话短说">长话短说</h2>
-<p>搭建个人主页的方式很多，这种免费个人wiki的优劣请参考上面提到的文章，实现的功能也基本上满足了我的需求。只是我的环境和他们不太一样， 我是在windows下的<a href="">cygwin环境</a>中实现的， 而不是他们的linux环境和mac环境，算是一种补充吧。</p>
-<h2 id="section"></h2>
+<!---title:cygwin的安装和使用-->
+<p>不知道cygwin是干什么的？看下<a href="http://baike.baidu.com/view/3968.htm?fr=aladdin">百度百科</a>的介绍吧。</p>
+<h2 id="安装">安装</h2>
+<p>安装过程请自行百度，下面记录的是key points(和搭建个人wiki相关的)：</p>
+<p>cygwin的下载地址： https://cygwin.com/install.html 根据操作系统选择32位版本或64位版本；</p>
+<p>安装时请选择国内的更新源镜像地址，或者手动添加一个。</p>
+<p>安装的组件包包括： * gcc相关组件 * gdb相关组件 * wget工具 * curl工具 * make工具 * git工具 * vim工具</p>
+<h2 id="安装apt-cyg">安装apt-cyg</h2>
+<p>该工具是cygwin下的包管理工具， 一些在安装cygwin时没有安装上的应用可以运行该工具进行快速安装， 而不用再次运行setup.exe 勾选应用。 开源项目地址在<a href="https://github.com/transcode-open/apt-cyg">这里</a> ,内有软件下载和安装步骤和使用方法。</p>
 
 <!--Baidu tongji-->
 <script>
