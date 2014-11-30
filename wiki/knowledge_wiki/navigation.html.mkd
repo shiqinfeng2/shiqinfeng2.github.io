@@ -1,1 +1,6 @@
-new
+<!---知识wiki-->
+##最佳实践
++ [这个免费个人wiki是如何生成的?](how_to_build_free_wiki_web.html)
++ to be continue
+
+
