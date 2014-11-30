@@ -27,8 +27,8 @@ E117: Unknown function: pathogen#infect
 int a=0;
 int main(void)
 {
-printf("a=%d\n");
-return 0;
+    printf("a=%d\n");
+    return 0;
 }
 </pre>
     
