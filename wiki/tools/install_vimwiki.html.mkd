@@ -21,12 +21,17 @@
     第  304 行:
     E117: Unknown function: pathogen#infect
     请按 ENTER 或其它命令继续
-    `int a=0;`
-    `int main(void)`
-    `{`
-        `printf("a=%d\n");`
-        `return 0;`
-    `}`
+    c语言高亮：
+    ``
+    <pre  class="brush: c">
+    int a=0;
+    int main(void)
+    {
+        printf("a=%d\n");
+        return 0;
+    }
+    </pre>
+    ``
 
 这是缺少插件导致的，先跳过，在基础环境配置里的vimrc配置中有解决的方法。
 
