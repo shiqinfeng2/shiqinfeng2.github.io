@@ -23,7 +23,7 @@ syntax on     //使用wimwiki必配
     请按 ENTER 或其它命令继续
     插播：c语言高亮测试：
     <!---brush: c-->
-<pre name="code" class="Cpp">
+<pre name="code" class="brush: c">
 int a=0;
 int main(void)
 {
