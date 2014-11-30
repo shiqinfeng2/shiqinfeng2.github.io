@@ -2,7 +2,8 @@
 
 * [cygwin的安装和使用](install_and_use_cygwin.html)
 * make工具、vim软件、git工具
-    必不可少，但目前使用cygwin环境，这些都在安装库中自带，不再单独叙述。
+
+必不可少，但目前使用cygwin环境，这些都在安装库中自带，不再单独叙述。
 
 * vimwiki安装
 
