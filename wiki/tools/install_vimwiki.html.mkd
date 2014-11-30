@@ -23,7 +23,7 @@ syntax on     //使用wimwiki必配
     请按 ENTER 或其它命令继续
     插播：c语言高亮测试：
     <!---brush: c-->
-<pre class="brush: c">
+<pre name="code" class="c">
 int a=0;
 int main(void)
 {
@@ -33,5 +33,5 @@ int main(void)
 </pre>
     
 
-这是缺少插件导致的，先跳过，在基础环境配置里的vimrc配置中有解决的方法。
+这是缺少插件导致的，先跳过，在基础环境配置里的vmeimrc配置中有解决的方法。
 
