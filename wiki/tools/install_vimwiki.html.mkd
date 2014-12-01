@@ -21,6 +21,7 @@ $ vim /usr/share/vim/vim74/plugin/vimwiki-2-1.vba
 第  304 行:
 E117: Unknown function: pathogen#infect
 请按 ENTER 或其它命令继续
+
 插播：c语言高亮测试：
 
 <pre  class="brush: c">
