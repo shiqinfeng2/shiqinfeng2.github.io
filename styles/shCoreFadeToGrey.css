@@ -81,9 +81,11 @@
 .syntaxhighlighter table td.code {
   width: 100% !important;
 }
-/*.syntaxhighlighter table td.code .container {
+/*
+ *.syntaxhighlighter table td.code .container {
   position: relative !important;
-}*/
+}
+*/
 .syntaxhighlighter table td.code .container textarea {
   box-sizing: border-box !important;
   position: absolute !important;
