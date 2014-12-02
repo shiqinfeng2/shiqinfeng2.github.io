@@ -81,11 +81,9 @@
 .syntaxhighlighter table td.code {
   width: 100% !important;
 }
-/*
- *.syntaxhighlighter table td.code .container {
+.syntaxhighlighter table td.code .container {
   position: relative !important;
 }
-*/
 .syntaxhighlighter table td.code .container textarea {
   box-sizing: border-box !important;
   position: absolute !important;
@@ -324,7 +322,8 @@
 .syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
   color: #96daff !important;
 }
-
+/*
 .syntaxhighlighter .functions {
   font-weight: bold !important;
 }
+*/
