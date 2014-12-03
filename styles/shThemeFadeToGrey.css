@@ -15,18 +15,18 @@
  * Dual licensed under the MIT and GPL licenses.
  */
 
-.syntaxhighlighter.source {
+/*.syntaxhighlighter.source {
   overflow: hidden !important;
-}
+}*/
 .syntaxhighlighter .bold {
   font-weight: bold !important;
 }
 .syntaxhighlighter .italic {
   font-style: italic !important;
 }
-/*.syntaxhighlighter .line {
+.syntaxhighlighter .line {
   white-space: pre !important;
-}*/
+}
 /**/
 .syntaxhighlighter table {
   width: 100% !important;
