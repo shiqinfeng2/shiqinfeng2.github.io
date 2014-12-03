@@ -24,19 +24,19 @@
 .syntaxhighlighter .italic {
   font-style: italic !important;
 }
-.syntaxhighlighter .line {
+/*.syntaxhighlighter .line {
   white-space: pre !important;
-}
+}*/
 /**/
 .syntaxhighlighter table {
   width: 100% !important;
 }
-/**/ /*
+/**/ /**/
 .syntaxhighlighter table caption {
   text-align: left !important;
   padding: .5em 0 0.5em 1em !important;
 }
-*/
+/**/
 /**
 .syntaxhighlighter table td.code {
   width: 100% !important;
