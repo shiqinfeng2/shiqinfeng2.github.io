@@ -14,9 +14,7 @@
  * @license
  * Dual licensed under the MIT and GPL licenses.
  */
- .syntaxhighlighter .line {
-  white-space: pre !important;
-}
+
 .syntaxhighlighter table {
   width: 100% !important;
 }
