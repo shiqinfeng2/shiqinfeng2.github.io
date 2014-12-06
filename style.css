@@ -23,7 +23,7 @@ a {
     padding-bottom: 1px;
 }
 a:visited {
-    color: #4a86e8;
+    color: #215ec2;
 }
 
 p {
@@ -34,7 +34,7 @@ ul li {list-style-type : round}
 
 pre {
     color: #bbbbbb;
-    background: #091c21;
+    background: #0a1619;
     margin-left: 20px;
     /*border: 1px solid;*/
 }
