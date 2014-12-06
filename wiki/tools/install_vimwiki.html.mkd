@@ -5,6 +5,7 @@
 用Vim打开vimwiki.vba,然后在”Normal模式”下,输入命令’:so %’,等一会儿,安装将自动完成.
 
     vim /usr/share/vim/vim74/plugin/vimwiki-2-1.vba
+    so %
 
 重要：在.vimnrc配置文件里没有一下的配置：
 
@@ -25,6 +26,7 @@
     请按 ENTER 或其它命令继续
 
 这是缺少插件导致的，先跳过，在基础环境配置里的vmeimrc配置中有解决的方法。
+
 插播：c语言高亮测试：
 
 <pre  class="brush: c">

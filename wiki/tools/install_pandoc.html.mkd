@@ -1,0 +1,7 @@
+<!---pandoc的安装-->
+
+在cygwin的环境中，只要安装[windows版本](http://johnmacfarlane.net/pandoc/installing.html)的pandoc就行了，当然安装完成后把pandoc程序所在的路径加到环境变量的系统路径中。
+
+在新开的cygwin控制台中，执行 pandoc --version 就可以看到以下的打印了：
+
+![pandoc --version](pandoc-version.jpg)

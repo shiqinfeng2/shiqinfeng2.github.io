@@ -10,6 +10,7 @@ cygwin的下载地址： https://cygwin.com/install.html  根据操作系统选�
 安装时请选择国内的更新源镜像地址，或者手动添加一个。
 
 安装的组件包包括：
+
 * gcc相关组件
 * gdb相关组件
 * wget工具
