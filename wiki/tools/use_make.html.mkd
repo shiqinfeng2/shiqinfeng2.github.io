@@ -1,0 +1,1 @@
+这里介绍是make工具的使用， makefile的编写请移步[这里](../prog/makefile.html)

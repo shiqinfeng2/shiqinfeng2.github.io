@@ -8,3 +8,5 @@
 
 这是利用cygwin可以调用windows下的程序的特性，否则就需要在cygwin环境下编译源代码安装了。
 但是pandoc还不是用c/c++编写的，装起来比较麻烦。
+
+[这个文章](pandoc_install.html)介绍的稍微详细点。

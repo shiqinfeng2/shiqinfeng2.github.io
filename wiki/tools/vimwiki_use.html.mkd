@@ -25,11 +25,11 @@ vimwiki 的安装同其他vim插件一样。有 zip 包和 vba 包两种格式�
 vim配置文件:
 
     " vimwiki配置
-    let g:vimwiki_list = [{'path': '~/Dropbox/blog/',
-    \ 'path_html': '~/Dropbox/blog/html/',
+    let g:vimwiki_list = [{'path': '~/Dropbox/blog/', #这里的目录要根据自己的实际目录修改
+    \ 'path_html': '~/Dropbox/blog/html/',            #这里的目录要根据自己的实际目录修改
     \ 'syntax': 'markdown',
     \ 'ext': '.mkd',
-    \ 'template_path': '~/Dropbox/blog/',
+    \ 'template_path': '~/Dropbox/blog/',             #这里的目录姚根据自己的实际目录修改
     \ 'template_default': 'template',
     \ 'template_ext': '.html'}]
     let g:vimwiki_camel_case = 0
@@ -45,7 +45,7 @@ vim配置文件:
 
 [vimwiki语法pdf](vimwikiqrc.pdf)
 
-[vimwiki与markdown 的语法区别](markdown_syntax.html)
+[vimwiki与markdown 的语法区别](../prog/markdown.html)
 
 ## 操作vimwiki
 

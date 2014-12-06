@@ -1,4 +1,4 @@
-<!---title:vimwiki安装-->
+<!---title:vimwiki安装和安装-->
 
 [下载Vimwiki插件](http://www.vim.org/scripts/script.php?script_id=2226)
 将下载到的vimwiki.vba（vimwiki-2-1.vba）文件放到C:\cygwin64\home\qinfeng\.vim\plugin下 
@@ -7,7 +7,7 @@
     vim /usr/share/vim/vim74/plugin/vimwiki-2-1.vba
     so %
 
-重要：在.vimnrc配置文件里没有一下的配置：
+重要：在.vimnrc配置文件里要确保有以下的配置：
 
     set nocompatible  //没有这句这句话会导致上面的错误
     filetype plugin on  //使用wimwiki必配
@@ -25,7 +25,11 @@
     E117: Unknown function: pathogen#infect
     请按 ENTER 或其它命令继续
 
-这是缺少插件导致的，先跳过，在基础环境配置里的vmeimrc配置中有解决的方法。
+这是缺少插件导致的，先跳过，在基础环境配置里的vimrc配置中有解决的方法。
+
+vimwiki的使用在[这里](vimwiki_use.html)
+
+
 
 插播：c语言高亮测试：
 
