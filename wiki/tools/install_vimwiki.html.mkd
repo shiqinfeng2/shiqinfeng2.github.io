@@ -7,21 +7,22 @@
 vim /usr/share/vim/vim74/plugin/vimwiki-2-1.vba
 
 重要：在.vimnrc配置文件里没有一下的配置：
-
+``
 set nocompatible  //没有这句这句话会导致上面的错误
 filetype plugin on  //使用wimwiki必配
 syntax on     //使用wimwiki必配
-
+``
 如果没有就会出现错误提示：*UseVimball不是编辑器命令！*。
 
 如果已经复制了楼主的现成vimrc，打开vba是可能还会出现下面的错误：
-
+``
 $ vim /usr/share/vim/vim74/plugin/vimwiki-2-1.vba
 处理 /home/qinfeng/.vimrc 时发生错误:
 第  304 行:
 E117: Unknown function: pathogen#infect
 请按 ENTER 或其它命令继续
-
+``
+这是缺少插件导致的，先跳过，在基础环境配置里的vmeimrc配置中有解决的方法。
 插播：c语言高亮测试：
 
 <pre  class="brush: c">
@@ -32,7 +33,4 @@ int main(void)
     return 0;
 }
 </pre>
-    
-
-这是缺少插件导致的，先跳过，在基础环境配置里的vmeimrc配置中有解决的方法。
 
