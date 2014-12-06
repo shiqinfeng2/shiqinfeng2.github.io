@@ -1,7 +1,7 @@
 /* general */
 body {
     color: #bbbbbb;
-    background: #1a1a1a center;
+    background: #151515 center;
     margin: 0 auto;
     padding: 0;
     font-family: sans-serif, Monospace, serif, Georgia, Palatino;
@@ -34,7 +34,7 @@ ul li {list-style-type : round}
 
 pre {
     color: #bbbbbb;
-    background: #07252c;
+    background: #091c21;
     margin-left: 20px;
     /*border: 1px solid;*/
 }
