@@ -5,3 +5,6 @@
 在新开的cygwin控制台中，执行 pandoc --version 就可以看到以下的打印了：
 
 ![pandoc --version](pandoc-version.jpg)
+
+这是利用cygwin可以调用windows下的程序的特性，否则就需要在cygwin环境下编译源代码安装了。
+但是pandoc还不是用c/c++编写的，装起来比较麻烦。

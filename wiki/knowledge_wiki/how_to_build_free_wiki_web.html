@@ -33,17 +33,41 @@
 <div id="TOC">
 <ul>
 <li><a href="#长话短说">长话短说</a></li>
-<li><a href="#section"></a></li>
+<li><a href="#各个工具是如何协同合作的">各个工具是如何协同合作的</a></li>
+<li><a href="#相关工具的安装">相关工具的安装</a></li>
+<li><a href="#工具的配置">工具的配置</a><ul>
+<li><a href="#vim的配置">vim的配置</a></li>
+<li><a href="#github的配置">github的配置</a></li>
+</ul></li>
+<li><a href="#makefile脚本的编写">makefile脚本的编写</a></li>
+<li><a href="#shell脚本的编写">shell脚本的编写</a></li>
+<li><a href="#使用教程">使用教程</a></li>
 </ul>
 </div>
  <!--if(toc)-->
 
 <!---title:用vimwiki+markdown+pandoc+github搭建免费个人wiki-->
 <!---date:2014-11-30 03:04 下午-->
-<p>因为楼主并非从事网络前端开发工作，搭建wiki使用的技术不甚熟悉，能够完成此事，是完全参考两位前辈的文章 （链接在这里：<a href="http://www.mikewootc.com/wiki/tool/sitebuild/mikewiki.html">1</a> 和<a href="http://wiki.ohlinux.com/wiki/tool/sitebuild/ohlinuxwiki.html">2</a>)，在此表示感谢。不过两位对某些要点忽略跳过了（可能他们觉得不是技术难点），导致走了些弯路。楼主会尽量吧构建过程写完成，保证连续性。</p>
+<p>因为楼主并非从事网络前端开发工作，搭建wiki使用的技术不甚熟悉，能够完成此事，是完全参考两位前辈的文章 （链接在这里：<a href="http://www.mikewootc.com/wiki/tool/sitebuild/mikewiki.html">1</a> 和 <a href="http://wiki.ohlinux.com/wiki/tool/sitebuild/ohlinuxwiki.html">2</a>)，在此表示感谢。不过两位对某些要点忽略跳过了（可能他们觉得不是技术难点），导致走了些弯路。楼主会尽量把构建过程写完成，希望没有接触过的人也能顺利完成，当然如果想定制或者遇到问题时，还是要具备相关的知识才能搞定，否则真是无从下手的。</p>
 <h2 id="长话短说">长话短说</h2>
-<p>搭建个人主页的方式很多，这种免费个人wiki的优劣请参考上面提到的文章，实现的功能也基本上满足了我的需求。只是我的环境和他们不太一样， 我是在windows下的<a href="">cygwin环境</a>中实现的， 而不是他们的linux环境和mac环境，算是一种补充吧。</p>
-<h2 id="section"></h2>
+<p>搭建个人主页的方式很多，这种免费个人wiki的<strong>优劣</strong>请参考上面提到的文章，实现的功能也基本上满足了我的需求。只是我的环境和他们不太一样， 我是在windows下的<a href="../tools/install_and_use_cygwin.html">cygwin环境</a>中实现的， 而不是他们的linux环境和mac环境，算是一种补充吧。</p>
+<h2 id="各个工具是如何协同合作的">各个工具是如何协同合作的</h2>
+<ol style="list-style-type: decimal">
+<li><a href="">git</a>是一个代码版本管理工具，用它管理我们的个人wiki，所有文章就都有了历史版本管理，不用担心数据丢失的问题了。</li>
+<li><a href="">github</a>是基于git版本管理技术的一个免费的在线版本服务器，很多优秀的开源代码都在上面进行版本管理。github还扩展了功能，当我们把html网页文件上传上去后，通过一个二级域名就能访问该网页了，如果自己花钱买一个一级域名， 也可以把这个域名和网页绑定，这样相当于自己建了一个简易的静态的网站了。我们把在本地的html文件使用git命令上传到github上，就可以在其他任意有网络的地方都能看到自己的wiki了。</li>
+<li>可是并不是人人都不了解html语法，实际上也没人愿意在写好文章后再编写html文件，那就让软件去做这个事好了，<a href="">pandoc</a>工具就是其中之一。几乎市面上的文本格式它都能互转。这里我们要它把mkd文本文件装换为html格式的文件。</li>
+<li>上面提到的mkd文本文件实际上是符合<a href="">markdown</a>语法写的文章。后缀名随便起都可以，但最好有自注释的效果。markdown可以理解为一种简化html的语法。目的是让人只专注于编辑文章内容本身，用简单的符号代表格式，让人“所想即所得”。</li>
+<li>任何文本编辑工具都能写具有markdown语法的文章，当然也有专门的软件。说到文本编辑工具不得不提“编辑器之神”----vi/vim/gvim，和“神的编辑器”----emacs，当然还有mac系统下的textmate。这3个之中湘桂接触较多的还是<a href="">vim</a>，所以我们采用vim来编辑，实际上vim就有vim-markdown的插件，当我们还是用<a href="">vim-vimwiki</a>插件修改wimwiki语法为markdown语法，各中利弊暂且不表。实际上此时我也没有深入了解o(╯□╰)o。</li>
+<li>忘了还有两个重要的工具<a href="">make</a>和<a href="">shell</a>，他们可以帮助我们自动化做一些重复的事。</li>
+</ol>
+<h2 id="相关工具的安装">相关工具的安装</h2>
+<p>请移步<a href="wiki/tools/navigation.html">这里</a>。</p>
+<h2 id="工具的配置">工具的配置</h2>
+<h3 id="vim的配置">vim的配置</h3>
+<h3 id="github的配置">github的配置</h3>
+<h2 id="makefile脚本的编写">makefile脚本的编写</h2>
+<h2 id="shell脚本的编写">shell脚本的编写</h2>
+<h2 id="使用教程">使用教程</h2>
 
 <!--Baidu tongji-->
 <script>
