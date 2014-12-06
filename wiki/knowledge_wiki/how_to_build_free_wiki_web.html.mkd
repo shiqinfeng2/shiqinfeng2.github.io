@@ -17,7 +17,7 @@
 6. 忘了还有两个重要的工具[make]()和[shell]()，他们可以帮助我们自动化做一些重复的事。
 
 ##相关工具的安装
-请移步[这里](wiki/tools/navigation.html)。
+请移步[这里](../tools/navigation.html)。
 
 ##工具的配置
 ###vim的配置

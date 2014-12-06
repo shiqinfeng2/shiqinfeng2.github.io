@@ -9,23 +9,38 @@
 所有的知识碎片和疑问都先扔进[这里](wiki/dropbox/dropbox.html),有空就整理。[回到目录](index.html)
 
 #知识wiki
-[这里](wiki/knowledge_wiki/navigation.html)以wiki形式组织知识，以问答的形式把知识关联在一起。
+[这里](wiki/knowledge_wiki/navigation.html)以wiki形式组织知识，以问答的形式把知识关联在一起。[回到目录](index.html)
 
 #知识体系归档
-这里采用树状结构整理**所有知识**，不区分原创和转载，转载的尽量修改后以自己的理解表达出来。
+这里采用树状结构整理**所有知识**，不区分原创和转载，转载的尽量修改后以自己的理解表达出来。[回到目录](index.html)
 
 ##厚积薄发 ----知识积累
 为什么叫厚积薄发？热门技术要学，基本功也很重要，机会总是留给有准备的人。[回到目录](index.html)
-###编程技能
-和编程语言相关的都在[这里](wiki/prog/navigation.html)。[回到目录](index.html)
+
+###编程语言和语法
+和语言相关的都在[这里](wiki/prog/navigation.html)。
+    包括编程语言、脚本语言、markdown语法、makefile语法等。
+[回到目录](index.html)
+
 ###linux内核
+[回到目录](index.html)
+
 ###驱动开发
+[回到目录](index.html)
+
 ###网络协议
+[回到目录](index.html)
+
 ###计算机理论与应用
+[回到目录](index.html)
 
 ##弯道超车 ----提高效率的工具和经验
+[回到目录](index.html)
+
 ###高效的工具
 所有工具软件的安装、使用都在[这里](wiki/tools/navigation.html)。[回到目录](index.html)
+
 ###他人的经验总结
+[回到目录](index.html)
 
 
