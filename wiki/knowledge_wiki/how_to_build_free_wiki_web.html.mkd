@@ -29,7 +29,7 @@
 ##shell脚本的编写
 
 ##使用教程
-
+请移步[这里](how_to_use_wiki.html)
 
 
 

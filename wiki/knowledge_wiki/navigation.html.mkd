@@ -1,6 +1,7 @@
 <!---知识wiki-->
 ##最佳实践
 + [这个免费个人wiki是如何生成的?](how_to_build_free_wiki_web.html)
++ [个人wiki的使用教程](how_to_use_wiki.html)
 + to be continue
 
 

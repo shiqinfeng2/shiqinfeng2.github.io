@@ -41,6 +41,6 @@
 所有工具软件的安装、使用都在[这里](wiki/tools/navigation.html)。[回到目录](index.html)
 
 ###他人的经验总结
-[回到目录](index.html)
+[这里](wiki/good_article/navigation.html)收集一些平时发现的自觉比较不错的文章，生怕错过就找不到了，因此都收集在这里。[回到目录](index.html)
 
 

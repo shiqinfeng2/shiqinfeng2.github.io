@@ -4,7 +4,7 @@
 
 * [cygwin的安装和使用](install_and_use_cygwin.html)
 * [make工具](use_make.html)
-* [vim软件]()
+* [vim软件](vim.html)
 * [git/github]()
 * [vimwiki安装和使用](install_vimwiki.html)
 * [pandoc安装和使用](install_pandoc.html)
