@@ -186,7 +186,7 @@
   
   还有一个很有用的命令是 dt" → 删除所有的内容，直到遇到双引号—— "。
   
-###区域选择: **<action>a<object>或<action>i<object>**
+###区域选择: **`<action>a<object>或<action>i<object>`**
   
   在visual 模式下，这些命令很强大，其命令格式为
   
@@ -207,9 +207,9 @@
   
   ![Text objects selection](textobjects.png)
   
-###块操作: **<C-v>**
+###块操作: **`<C-v>`**
 
-  块操作，典型的操作： 0 <C-v> <C-d> I-- [ESC]
+  块操作，典型的操作： `0 <C-v> <C-d> I-- [ESC]`
   
   * `^ → 到行头`
   * `<C-v> → 开始块操作`
@@ -218,11 +218,11 @@
   
   ![Rectangular blocks](rectangular-blocks.gif)
   
-  在Windows下的vim，你需要使用 <C-q> 而不是 <C-v> ，<C-v> 是拷贝剪贴板。
+    在Windows下的vim，你需要使用 <C-q> 而不是 <C-v> ，<C-v> 是拷贝剪贴板。
   
-###自动提示: **<C-n>和<C-p>**
+###自动提示: **`<C-n>和<C-p>`**
   
-  在 Insert 模式下，你可以输入一个词的开头，然后按 <C-p>或是<C-n>，自动补齐功能就出现了……
+    在 Insert 模式下，你可以输入一个词的开头，然后按 <C-p>或是<C-n>，自动补齐功能就出现了……
   
   ![Completion](completion.gif)
   
@@ -247,9 +247,9 @@
   
   ![Macros](macros.gif)
   
-###可视化选择：**v,V,<C-v>**
+###可视化选择：**`v,V,<C-v>`**
 
-  前面，我们看到了 <C-v>的示例 （在Windows下应该是<C-q>），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：
+  前面，我们看到了 `<C-v>`的示例 （在Windows下应该是`<C-q>`），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：
   
   * `J → 把所有的行连接起来（变成一行）`
   * `< 或 > → 左右缩进`

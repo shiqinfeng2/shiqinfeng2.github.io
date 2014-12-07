@@ -36,11 +36,11 @@
 <li><a href="#第三级-更好更强更快">第三级 – 更好，更强，更快</a></li>
 <li><a href="#第四级-vim-超能力">第四级 – Vim 超能力</a><ul>
 <li><a href="#在当前行上移动光标-0-f-f-t-t">在当前行上移动光标: 0 ^ $ f F t T</a></li>
-<li><a href="#区域选择-a或i">区域选择: <strong><action>a<object>或<action>i<object></strong></a></li>
-<li><a href="#块操作">块操作: <strong><C-v></strong></a></li>
-<li><a href="#自动提示-和">自动提示: <strong><C-n>和<C-p></strong></a></li>
+<li><a href="#区域选择-actionaobject或actioniobject">区域选择: <strong><code>&lt;action&gt;a&lt;object&gt;或&lt;action&gt;i&lt;object&gt;</code></strong></a></li>
+<li><a href="#块操作-c-v">块操作: <strong><code>&lt;C-v&gt;</code></strong></a></li>
+<li><a href="#自动提示-c-n和c-p">自动提示: <strong><code>&lt;C-n&gt;和&lt;C-p&gt;</code></strong></a></li>
 <li><a href="#宏录制qa操作序列qa">宏录制：<strong>qa操作序列q,<span class="citation">@a</span>,@@</strong></a></li>
-<li><a href="#可视化选择vv">可视化选择：<strong>v,V,<C-v></strong></a></li>
+<li><a href="#可视化选择vvc-v">可视化选择：<strong><code>v,V,&lt;C-v&gt;</code></strong></a></li>
 <li><a href="#分屏-split和vsplit.">分屏: <strong>:split和vsplit.</strong></a></li>
 </ul></li>
 <li><a href="#结束语">结束语</a></li>
@@ -199,7 +199,7 @@ gu (变小写)</code></pre>
 <img src="line_moves.jpg" alt="Line moves" /><p class="caption">Line moves</p>
 </div>
 <p>还有一个很有用的命令是 dt&quot; → 删除所有的内容，直到遇到双引号—— &quot;。</p>
-<h3 id="区域选择-a或i">区域选择: <strong><action>a<object>或<action>i<object></strong></h3>
+<h3 id="区域选择-actionaobject或actioniobject">区域选择: <strong><code>&lt;action&gt;a&lt;object&gt;或&lt;action&gt;i&lt;object&gt;</code></strong></h3>
 <p>在visual 模式下，这些命令很强大，其命令格式为</p>
 <pre><code>&lt;action&gt;a&lt;object&gt; 和 &lt;action&gt;i&lt;object&gt;</code></pre>
 <p>action可以是任何的命令，如 d (删除), y (拷贝), v (可以视模式选择)。</p>
@@ -218,8 +218,8 @@ gu (变小写)</code></pre>
 <div class="figure">
 <img src="textobjects.png" alt="Text objects selection" /><p class="caption">Text objects selection</p>
 </div>
-<h3 id="块操作">块操作: <strong><C-v></strong></h3>
-<p>块操作，典型的操作： 0 <C-v> <C-d> I-- [ESC]</p>
+<h3 id="块操作-c-v">块操作: <strong><code>&lt;C-v&gt;</code></strong></h3>
+<p>块操作，典型的操作： <code>0 &lt;C-v&gt; &lt;C-d&gt; I-- [ESC]</code></p>
 <ul>
 <li><code>^ → 到行头</code></li>
 <li><code>&lt;C-v&gt; → 开始块操作</code></li>
@@ -229,9 +229,9 @@ gu (变小写)</code></pre>
 <div class="figure">
 <img src="rectangular-blocks.gif" alt="Rectangular blocks" /><p class="caption">Rectangular blocks</p>
 </div>
-<p>在Windows下的vim，你需要使用 <C-q> 而不是 <C-v> ，<C-v> 是拷贝剪贴板。</p>
-<h3 id="自动提示-和">自动提示: <strong><C-n>和<C-p></strong></h3>
-<p>在 Insert 模式下，你可以输入一个词的开头，然后按 <C-p>或是<C-n>，自动补齐功能就出现了……</p>
+<pre><code>在Windows下的vim，你需要使用 &lt;C-q&gt; 而不是 &lt;C-v&gt; ，&lt;C-v&gt; 是拷贝剪贴板。</code></pre>
+<h3 id="自动提示-c-n和c-p">自动提示: <strong><code>&lt;C-n&gt;和&lt;C-p&gt;</code></strong></h3>
+<pre><code>在 Insert 模式下，你可以输入一个词的开头，然后按 &lt;C-p&gt;或是&lt;C-n&gt;，自动补齐功能就出现了……</code></pre>
 <div class="figure">
 <img src="completion.gif" alt="Completion" /><p class="caption">Completion</p>
 </div>
@@ -258,8 +258,8 @@ gu (变小写)</code></pre>
 <div class="figure">
 <img src="macros.gif" alt="Macros" /><p class="caption">Macros</p>
 </div>
-<h3 id="可视化选择vv">可视化选择：<strong>v,V,<C-v></strong></h3>
-<p>前面，我们看到了 <C-v>的示例 （在Windows下应该是<C-q>），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：</p>
+<h3 id="可视化选择vvc-v">可视化选择：<strong><code>v,V,&lt;C-v&gt;</code></strong></h3>
+<p>前面，我们看到了 <code>&lt;C-v&gt;</code>的示例 （在Windows下应该是<code>&lt;C-q&gt;</code>），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：</p>
 <ul>
 <li><code>J → 把所有的行连接起来（变成一行）</code></li>
 <li><code>&lt; 或 &gt; → 左右缩进</code></li>
