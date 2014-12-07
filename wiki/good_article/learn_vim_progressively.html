@@ -88,14 +88,14 @@
 <h2 id="第二级-感觉良好">第二级 – 感觉良好</h2>
 <p>上面的那些命令只能让你存活下来，现在是时候学习一些更多的命令了，下面是我的建议： （注：所有的命令都需要在Normal模式下使用，如果你不知道现在在什么样的模式，你就狂按几次ESC键 O(∩_∩)O哈哈~）</p>
 <ol style="list-style-type: decimal">
-<li><strong>各种插入模式</strong>
+<li><p><strong>各种插入模式</strong></p>
 <ol style="list-style-type: decimal">
 <li>a → 在光标后插入</li>
 <li>o → 在当前行后插入一个新行 （注：小写o）</li>
 <li>O → 在当前行前插入一个新行 （注：大写o）</li>
 <li>cw → 替换从光标所在位置后到一个单词结尾的字符</li>
 </ol></li>
-<li><strong>简单的移动光标</strong>
+<li><p><strong>简单的移动光标</strong></p>
 <ol style="list-style-type: decimal">
 <li>0 → 数字零，到行头</li>
 <li>^ → 到本行第一个不是blank字符的位置（所谓blank字符就是空格，tab，换行，回车等）</li>
@@ -103,17 +103,17 @@
 <li>g_ → 到本行最后一个不是blank字符的位置。</li>
 <li>/pattern → 搜索 pattern 的字符串（注：<em>如果搜索出多个匹配，可按n键到下一个</em>）</li>
 </ol></li>
-<li><strong>拷贝/粘贴</strong> （注：p/P都可以，p是表示在当前位置之后，P表示在当前位置之前）
+<li><p><strong>拷贝/粘贴</strong> （注：p/P都可以，p是表示在当前位置之后，P表示在当前位置之前）</p>
 <ol style="list-style-type: decimal">
 <li>P → 粘贴</li>
 <li>yy → 拷贝当前行当行于 ddP</li>
 </ol></li>
-<li><strong>Undo/Redo</strong>
+<li><p><strong>Undo/Redo</strong></p>
 <ol style="list-style-type: decimal">
 <li>u → undo</li>
 <li><C-r> → redo</li>
 </ol></li>
-<li><strong>打开/保存/退出/改变文件(Buffer)</strong>
+<li><p><strong>打开/保存/退出/改变文件(Buffer)</strong></p>
 <ol style="list-style-type: decimal">
 <li>:e <path/to/file> → 打开一个文件</li>
 <li>:w → 存盘</li>
@@ -127,7 +127,8 @@
 <p>花点时间熟悉一下上面的命令，一旦你掌握他们了，你就几乎可以干其它编辑器都能干的事了。 但是到现在为止，你还是觉得使用vim还是有点笨拙，不过没关系，你可以进阶到第三级了。</p>
 <h2 id="第三级-更好更强更快">第三级 – 更好，更强，更快</h2>
 <p>先恭喜你！你干的很不错。我们可以开始一些更为有趣的事了。在第三级，我们只谈那些和vi可以兼容的命令。</p>
-<p><strong>-更好-</strong> 下面，让我们看一下vim是怎么重复自己的：</p>
+<p><strong>-更好-</strong></p>
+<p>下面，让我们看一下vim是怎么重复自己的：</p>
 <ol style="list-style-type: decimal">
 <li>. → (小数点) 可以重复上一次的命令</li>
 <li>N<command> → 重复某个命令N次</li>
@@ -138,7 +139,8 @@
 1. `100idesu [ESC] → 会写下 “desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu “`
 1. `. → 重复上一个命令—— 100 “desu “.`
 1. `3. → 重复 3 次 “desu” (注意：不是 300，你看，VIM多聪明啊).`</code></pre>
-<p><strong>-更强-</strong> 你要让你的光标移动更有效率，你一定要了解下面的这些命令，千万别跳过。</p>
+<p><strong>-更强-</strong></p>
+<p>你要让你的光标移动更有效率，你一定要了解下面的这些命令，千万别跳过。</p>
 <ol style="list-style-type: decimal">
 <li>NG → 到第 N 行 （陈皓注：注意命令中的G是大写的，另我一般使用 : N 到第N行，如 :137 到第137行）</li>
 <li>gg → 到第一行。（陈皓注：相当于1G，或 :1）</li>
@@ -161,7 +163,8 @@
 </ul></li>
 </ol>
 <p>相信我，上面这三个命令对程序员来说是相当强大的。</p>
-<p><strong>-更快-</strong> 你一定要记住光标的移动，因为很多命令都可以和这些移动光标的命令连动。很多命令都可以如下来干：</p>
+<p><strong>-更快-</strong></p>
+<p>你一定要记住光标的移动，因为很多命令都可以和这些移动光标的命令连动。很多命令都可以如下来干：</p>
 <pre><code>&lt;start position&gt;&lt;command&gt;&lt;end position&gt;</code></pre>
 <p>例如 0y$ 命令意味着： 0 → 先到行头 y → 从这里开始拷贝 $ → 拷贝到本行最后一个字符 你可以输入 ye，从当前位置拷贝到本单词的最后一个字符。</p>
 <p>你也可以输入 y2/foo 来拷贝2个 “foo” 之间的字符串。</p>
@@ -173,9 +176,23 @@ gu (变小写)</code></pre>
 <p>等等 （注：可视化选择是一个很有意思的命令，你可以先按v，然后移动光标，你就会看到文本被选择，然后，你可能d，也可y，也可以变大写等）</p>
 <h2 id="第四级-vim-超能力">第四级 – Vim 超能力</h2>
 <p>你只需要掌握前面的命令，你就可以很舒服的使用VIM了。但是，现在，我们向你介绍的是VIM杀手级的功能。下面这些功能是我只用vim的原因。</p>
-<p><strong>==在当前行上移动光标: 0 ^ $ f F t T ==</strong> * 0 → 到行头 * ^ → 到本行的第一个非blank字符 * $ → 到行尾 * g_ → 到本行最后一个不是blank字符的位置。 * fa → 到下一个为a的字符处，你也可以fs到下一个为s的字符。 * t, → 到逗号前的第一个字符。逗号可以变成其它字符。 * 3fa → 在当前行查找第三个出现的a。 * F 和 T → 和 f 和 t 一样，只不过是相反方向。 <img src="line_moves.jpg" alt="Line moves" /></p>
+<p><strong>==在当前行上移动光标: 0 ^ $ f F t T ==</strong></p>
+<ul>
+<li>0 → 到行头</li>
+<li>^ → 到本行的第一个非blank字符</li>
+<li>$ → 到行尾</li>
+<li>g_ → 到本行最后一个不是blank字符的位置。</li>
+<li>fa → 到下一个为a的字符处，你也可以fs到下一个为s的字符。</li>
+<li>t, → 到逗号前的第一个字符。逗号可以变成其它字符。</li>
+<li>3fa → 在当前行查找第三个出现的a。</li>
+<li>F 和 T → 和 f 和 t 一样，只不过是相反方向。</li>
+</ul>
+<div class="figure">
+<img src="line_moves.jpg" alt="Line moves" /><p class="caption">Line moves</p>
+</div>
 <p>还有一个很有用的命令是 dt&quot; → 删除所有的内容，直到遇到双引号—— &quot;。</p>
-<p><strong>==区域选择 <action>a<object> 或 <action>i<object> ==</strong> 在visual 模式下，这些命令很强大，其命令格式为</p>
+<p><strong>==区域选择 <action>a<object> 或 <action>i<object> ==</strong></p>
+<p>在visual 模式下，这些命令很强大，其命令格式为</p>
 <pre><code>&lt;action&gt;a&lt;object&gt; 和 &lt;action&gt;i&lt;object&gt;</code></pre>
 <p>action可以是任何的命令，如 d (删除), y (拷贝), v (可以视模式选择)。</p>
 <p>object 可能是： w 一个单词， W 一个以空格为分隔的单词， s 一个句字， p 一个段落。也可以是一个特别的字符：&quot;、 '、 )、 }、 ]。</p>
@@ -193,55 +210,74 @@ gu (变小写)</code></pre>
 <div class="figure">
 <img src="textobjects.png" alt="Text objects selection" /><p class="caption">Text objects selection</p>
 </div>
-<p><strong>==块操作: <C-v> ==</strong> 块操作，典型的操作： 0 <C-v> <C-d> I-- [ESC]</p>
+<p><strong>==块操作: <C-v> ==</strong></p>
+<p>块操作，典型的操作： 0 <C-v> <C-d> I-- [ESC]</p>
 <ul>
-<li>^ → 到行头</li>
-<li><C-v> → 开始块操作</li>
-<li><C-d> → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)</li>
-<li>I-- [ESC] → I是插入，插入“--”，按ESC键来为每一行生效。 <img src="rectangular-blocks.gif" alt="Rectangular blocks" /></li>
+<li><code>^ → 到行头</code></li>
+<li><code>&lt;C-v&gt; → 开始块操作</code></li>
+<li><code>&lt;C-d&gt; → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)</code></li>
+<li><code>I-- [ESC] → I是插入，插入“--”，按ESC键来为每一行生效。</code></li>
 </ul>
+<div class="figure">
+<img src="rectangular-blocks.gif" alt="Rectangular blocks" /><p class="caption">Rectangular blocks</p>
+</div>
 <p>在Windows下的vim，你需要使用 <C-q> 而不是 <C-v> ，<C-v> 是拷贝剪贴板。</p>
-<p><strong>==自动提示： <C-n> 和 <C-p> ==</strong> 在 Insert 模式下，你可以输入一个词的开头，然后按 <C-p>或是<C-n>，自动补齐功能就出现了……</p>
+<p><strong>==自动提示： <C-n> 和 <C-p> ==</strong></p>
+<p>在 Insert 模式下，你可以输入一个词的开头，然后按 <C-p>或是<C-n>，自动补齐功能就出现了……</p>
 <div class="figure">
 <img src="completion.gif" alt="Completion" /><p class="caption">Completion</p>
 </div>
-<p><strong>==宏录制： qa 操作序列 q, <span class="citation">@a</span>, @@ ==</strong> * qa 把你的操作记录在寄存器 a。 * 于是 <span class="citation">@a</span> 会replay被录制的宏。 * @@ 是一个快捷键用来replay最新录制的宏。</p>
-<p><em>示例</em></p>
+<p><strong>==宏录制： qa 操作序列 q, <span class="citation">@a</span>, @@ ==</strong></p>
+<ul>
+<li><code>qa 把你的操作记录在寄存器 a。</code></li>
+<li><code>于是 @a 会replay被录制的宏。</code></li>
+<li><code>@@ 是一个快捷键用来replay最新录制的宏。</code></li>
+</ul>
+<p><em>示例：</em></p>
 <p>在一个只有一行且这一行只有“1”的文本中，键入如下命令：</p>
 <ol style="list-style-type: decimal">
-<li>qaYp<C-a>q →
+<li><code>qaYp&lt;C-a&gt;q   →</code>
 <ol style="list-style-type: decimal">
-<li>qa 开始录制</li>
-<li>Yp 复制行.</li>
-<li><C-a> 增加1.</li>
-<li>q 停止录制.</li>
+<li><code>qa 开始录制</code></li>
+<li><code>Yp 复制行.</code></li>
+<li><code>&lt;C-a&gt; 增加1.</code></li>
+<li><code>q 停止录制.</code></li>
 </ol></li>
-<li><span class="citation">@a</span> → 在1下面写下 2</li>
-<li>@@ → 在2 正面写下3</li>
-<li>现在做 100@@ 会创建新的100行，并把数据增加到 103. <img src="macros.gif" alt="Macros" /></li>
+<li><code>@a → 在1下面写下 2</code></li>
+<li><code>@@ → 在2 正面写下3</code></li>
+<li><code>现在做 100@@ 会创建新的100行，并把数据增加到 103.</code></li>
 </ol>
-<p><strong>==可视化选择： v,V,<C-v> ==</strong> 前面，我们看到了 <C-v>的示例 （在Windows下应该是<C-q>），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：</p>
+<div class="figure">
+<img src="macros.gif" alt="Macros" /><p class="caption">Macros</p>
+</div>
+<p><strong>==可视化选择： v,V,<C-v> ==</strong></p>
+<p>前面，我们看到了 <C-v>的示例 （在Windows下应该是<C-q>），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：</p>
 <ul>
-<li>J → 把所有的行连接起来（变成一行）</li>
-<li>&lt; 或 &gt; → 左右缩进</li>
-<li>= → 自动给缩进 （注：这个功能相当强大，我太喜欢了） <img src="autoindent.gif" alt="Autoindent" /></li>
+<li><code>J → 把所有的行连接起来（变成一行）</code></li>
+<li><code>&lt; 或 &gt; → 左右缩进</code></li>
+<li><code>= → 自动给缩进 （注：这个功能相当强大，我太喜欢了）</code></li>
 </ul>
+<div class="figure">
+<img src="autoindent.gif" alt="Autoindent" /><p class="caption">Autoindent</p>
+</div>
 <p>在所有被选择的行后加上点东西：</p>
 <ul>
-<li><C-v></li>
-<li>选中相关的行 (可使用 j 或 <C-d> 或是 /pattern 或是 % 等……)</li>
-<li>$ 到行最后</li>
-<li>A, 输入字符串，按 ESC。 <img src="append-to-many-lines.gif" alt="Append to many lines" /></li>
+<li><code>&lt;C-v&gt;</code></li>
+<li><code>选中相关的行 (可使用 j 或 &lt;C-d&gt; 或是 /pattern 或是 % 等……)</code></li>
+<li><code>$ 到行最后</code></li>
+<li><code>A, 输入字符串，按 ESC。</code></li>
 </ul>
-<p><strong>==分屏: :split 和 vsplit. ==</strong> 下面是主要的命令，你可以使用VIM的帮助 :help split. 你可以参考本站以前的一篇文章VIM分屏。</p>
+<div class="figure">
+<img src="append-to-many-lines.gif" alt="Append to many lines" /><p class="caption">Append to many lines</p>
+</div>
+<p><strong>==分屏: :split 和 vsplit. ==</strong></p>
+<p>下面是主要的命令，你可以使用VIM的帮助 :help split. 你可以参考本站以前的一篇文章VIM分屏。</p>
 <ul>
-<li>:split → 创建分屏 (:vsplit创建垂直分屏)</li>
-<li><C-w>
-<dir>
-: dir就是方向，可以是 hjkl 或是 ←↓↑→ 中的一个，其用来切换分屏。</li>
-<li><C-w>_ (或 <C-w>|) : 最大化尺寸 (<C-w>| 垂直分屏)</li>
-<li><C-w>+ (或 <C-w>-) : 增加尺寸</li>
-<li>Split</li>
+<li><code>:split → 创建分屏 (:vsplit创建垂直分屏)</code></li>
+<li><code>&lt;C-w&gt;&lt;dir&gt; : dir就是方向，可以是 hjkl 或是 ←↓↑→ 中的一个，其用来切换分屏。</code></li>
+<li><code>&lt;C-w&gt;_ (或 &lt;C-w&gt;|) : 最大化尺寸 (&lt;C-w&gt;| 垂直分屏)</code></li>
+<li><code>&lt;C-w&gt;+ (或 &lt;C-w&gt;-) : 增加尺寸</code></li>
+<li><code>Split</code></li>
 </ul>
 <h2 id="结束语">结束语</h2>
 <ul>

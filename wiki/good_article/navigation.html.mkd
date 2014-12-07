@@ -3,4 +3,4 @@
 
 ##技术文章
 
-1. [vim练级攻略,原文叫<Learn Vim Progressively>](learn_vim_progressively.html)
+1. [vim练级攻略,原文叫 《Learn Vim Progressively》](learn_vim_progressively.html)
