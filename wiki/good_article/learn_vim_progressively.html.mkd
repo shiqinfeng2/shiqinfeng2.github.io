@@ -205,7 +205,7 @@
   * v2i) → 会选择 map (+) ("foo")
   * v2a) → 会选择 (map (+) ("foo"))
   
-  ![Text objects selection](textobjects.png)
+  ![Text objects selection](textobjects.gif)
   
 ###块操作: **`<C-v>`**
 

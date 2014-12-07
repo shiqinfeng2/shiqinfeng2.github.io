@@ -263,6 +263,8 @@ nnoremap <silent> <F8> :cclose<CR>
 
 " NERDTreeToggle
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
+autocmd vimenter * NERDTree  "启动vim的时候自动打开目录�
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Toggle display line number
 nnoremap <silent> <F10> :set number!<CR>
