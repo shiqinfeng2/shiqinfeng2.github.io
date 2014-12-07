@@ -2,7 +2,7 @@
 <!---keywords:语法,markdown,vimwiki,使用-->
 <!---date:2013-05-30-->
 ##标题 
-
+``
 <table>
     <tr>
         <td> 级别 </td>
@@ -47,7 +47,7 @@
         <td><h6> 六级标题 </h6></td>
     </tr>
 </table>
-
+``
 
 ##文字格式 
 
