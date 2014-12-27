@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<link rel="stylesheet" href="/style.css" type="text/css" />
+
+
+
+</head>
+
+
+<body>
+<div id="wrapper">
+
+<div id="all">
+    <div id="header">
+        <p class="header_titleline">syzfeng的个人Wiki</p>
+        <p class="header_subline">一切思考，都将在此记录</p>
+        <p class="header_subline"><a href="/index.html">首页</a></p>
+</div>
+
+
+ <!--if(title)-->
+
+<p>目录:</p>
+<div id="TOC">
+<ul>
+<li><a href="#代码相关的">代码相关的</a><ul>
+<li><a href="#export_symbol和export_symbol_gpl的含义">EXPORT_SYMBOL和EXPORT_SYMBOL_GPL的含义</a></li>
+</ul></li>
+</ul>
+</div>
+ <!--if(toc)-->
+
+<!---这里放一些暂时还不知道怎么分类的知识点-->
+<h2 id="代码相关的">代码相关的</h2>
+<h3 id="export_symbol和export_symbol_gpl的含义">EXPORT_SYMBOL和EXPORT_SYMBOL_GPL的含义</h3>
+<ol style="list-style-type: decimal">
+<li>EXPORT_SYMBOL</li>
+</ol>
+<p>EXPORT_SYMBOL标签定义的函数或者符号对全部内核代码公开，不用修改内核代码就可以在用户的内核模块直接调用。 用法：EXPORT_SYMBOL(my_pub_func)。 在预编译阶段会解析为：</p>
+<pre class="brush: c">
+extern void *__crc_my_pub_func __attribute__((weak));
+
+static const unsigned long __kcrctab_my_pub_func __attribute__((__used__)) __attribute__((section("__kcrctab" ""), unused)) = (unsigned long) &__crc_my_pub_func; 
+
+static const char __kstrtab_my_pub_func[] __attribute__((section("__ksymtab_strings"))) = "" "my_pub_func"; 
+
+static const struct kernel_symbol __ksymtab_my_pub_func __attribute__((__used__)) __attribute__((section("__ksymtab" ""), unused)) = { (unsigned long)&my_pub_func, __kstrtab_my_pub_func };
+</pre>
+<p>其中,先通过添加前缀__crc_来声明一个外部函数__crc_my_pub_func, 定义静态常量__kcrctab_my_pub_func 用来保存__crc_my_pub_func的地址, 定义静态常量__kstrtab_my_pub_func 用来保存my_pub_func字符串，再定义静态常量 __ksymtab_my_pub_func保存my_pub_func的地址和符号信息(名字字符串)__kstrtab_my_pub_func.<strong>该符号对应的地址只有在insmod后才会确定</strong></p>
+<p>__ksymtab_my_pub_func会链接到*__ksymtab* section, *__ksymtab* section中的所有内容构成了内核导出的符号表，这个表在insmod 时候会用到。</p>
+<p>cat /proc/kallsyms会打印出内核当前的符号表。例如：</p>
+<pre><code>d8834a24 t snd_free_sgbuf_pages [snd_page_alloc]
+c0180d7a U create_proc_entry [snd_page_alloc]
+d88341d8 T snd_dma_free_pages [snd_page_alloc]
+c013d858 U __get_free_pages [snd_page_alloc]
+d8834ab5 t snd_malloc_sgbuf_pages [snd_page_alloc]
+c014f906 U kmem_cache_alloc [snd_page_alloc]
+c0106dcd U dma_alloc_coherent [snd_page_alloc]</code></pre>
+<p>其中第一列是该符号在内核地址空间中的地址，第二列是符号属性，小写表示局部符号， 大写表示全局符号，第三列表示符号字符串，这里只显示EXPORT_SYMBOL,EXPROT_SYMBOL_GPL处理过的符号。</p>
+<p>system.map内核符号文件。通过more /boot/System.map 可以查看内核符号列表。可以显示编译好内核后所有在内核中的符号，模块中的要另行查看。</p>
+<p>通过nm vmlinux也可以查看内核符号列表。</p>
+<p>通过nm module_name可以查看模块的符号列表。但是得到是相对地址，只有加载后才会分配绝对地址。 比如：e1000模块，如果e1000中的符号经过EXPORT_SYMBOL处理，等加载后， 我们可以通过more /boot/System.map和nm vmlinux命令查看到，但是没有EXPORT_SYMBOL的，目前不知道怎么查看</p>
+下面例子验证EXPORT_SYMBOL：
+<pre class="brush: c">
+#include <linux/module.h>  
+#include <linux/kernel.h>  
+ 
+static int __init a_init_module(void)  
+{  
+    unsigned long *__kcrctab_per_cpu__hrtimer_bases = 0xc02678b4;  
+    unsigned char *__kstrtab_per_cpu__hrtimer_bases = 0xc026926b;  
+    struct kernel_symbol *__ksymtab_per_cpu__hrtimer_bases = 0xc0265018;  
+      
+    printk("__kcrctab_per_cpu__hrtimer_bases = %08x\n", *__kcrctab_per_cpu__hrtimer_bases);  
+    printk("__kstrtab_per_cpu__hrtimer_bases = %s\n", __kstrtab_per_cpu__hrtimer_bases);  
+    printk("__ksymtab_per_cpu__hrtimer_bases value = %08x, name = %s\n", __ksymtab_per_cpu__hrtimer_bases->value,\  
+        __ksymtab_per_cpu__hrtimer_bases->name);  
+      
+    return 0;  
+}  
+      
+static void __exit a_cleanup_module(void)  
+{  
+        printk("Bye, Bye\n");  
+}  
+module_init(a_init_module);  
+module_exit(a_cleanup_module);  
+
+</pre>
+makefile文件如下：
+<pre class="brush:c">
+#  
+# Makefile for hello.c file  
+#  
+KDIR:=/lib/modules/$(shell uname -r)/build  
+
+obj-m:=hello.o  
+  
+default:  
+     $(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules  
+clean:  
+     $(RM) .*.cmd *.mod.c *.o *.ko -r .tmp*  
+</pre>
+<p>注：该makefile实现的就是模块的编译。更多模块相关内容看<a href="how_to_make_a_modules.html">这里</a></p>
+<p>make; insmod hello.ko之后通过dmesg的运行结果：</p>
+<pre><code>__kcrctab_per_cpu__hrtimer_bases = 1ac19564
+__kstrtab_per_cpu__hrtimer_bases = per_cpu__hrtimer_bases
+__ksymtab_per_cpu__hrtimer_bases value = c0279ea0, name = per_cpu__hrtimer_bases</code></pre>
+<p>通过nm vmlinux | grep per_cpu__hrtimer_bases我们可以看到如下的对应关系：(可以先看下地址再编写测试代码)</p>
+<pre><code>1ac19564 A __crc_per_cpu__hrtimer_bases
+c02678b4 r __kcrctab_per_cpu__hrtimer_bases
+c026926b r __kstrtab_per_cpu__hrtimer_bases
+c0265018 r __ksymtab_per_cpu__hrtimer_bases
+c0279ea0 d per_cpu__hrtimer_bases</code></pre>
+<ol style="list-style-type: decimal">
+<li>EXPORT_SYMBOL和EXPORT_SYMBOL_GPL的区别</li>
+</ol>
+<p>EXPORT_SYMBOL_GPL的符号必须要用MODULE_LICENSE(&quot;GPL&quot;)或者 用MODULE_LICENSE(&quot;Dual BSD/GPL&quot;)之后才能在模块中引用。 而且MODULE_LICENSE(&quot;char&quot;)中的char不可以是任意字符，否则错误和没有MODULE_LICENSE效果一样。</p>
+
+<!--Baidu tongji-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c33f8eb1bbd2cf29ae19a3492ccca0c6";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--Baidu tongji-->
+<div id="date"> </div>
+<div id="liuyan">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1789306" async=""></script>
+    <!-- UY END -->
+</div>
+<div id="footer">
+    <p class="footer_subline">Contact: shi.qinfeng@infogence.com.cn</p>
+</div>
+<!--SyntaxHighlighter-->
+<script type="text/javascript" src="/scripts/shCore.js"></script>
+<script type="text/javascript" src="/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="/scripts/shBrushPython.js"></script>
+<script type="text/javascript" src="/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="/scripts/shBrushXml.js"></script>
+<!---<link type="text/css" rel="stylesheet" href="/styles/shThemeFadeToGrey.css"/>-->
+<link type="text/css" rel="stylesheet" href="/styles/shThemeFadeToGrey.css" /> 
+<script type="text/javascript">
+    SyntaxHighlighter.all()
+</script>
+</div> <!--wrapper-->
+</body>
+</html>

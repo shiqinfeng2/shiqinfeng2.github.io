@@ -17,12 +17,19 @@
 ##厚积薄发 ----知识积累
 为什么叫厚积薄发？热门技术要学，基本功也很重要，机会总是留给有准备的人。[回到目录](index.html)
 
+###暂无分类的
+[请猛戳这里](wiki/knowledge_etc.html)
+
 ###编程语言和语法
 和语言相关的都在[这里](wiki/prog/navigation.html)。
     包括编程语言、脚本语言、markdown语法、makefile语法等。
 [回到目录](index.html)
 
 ###linux内核
+
+* [协议栈](wiki/linux-kernel/protocol.html)
+* [文件系统](wiki/linux-kernel/fs.html)
+
 [回到目录](index.html)
 
 ###驱动开发

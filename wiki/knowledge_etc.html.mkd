@@ -1,0 +1,110 @@
+<!---这里放一些暂时还不知道怎么分类的知识点-->
+
+##代码相关的
+
+###EXPORT_SYMBOL和EXPORT_SYMBOL_GPL的含义
+
+1. EXPORT_SYMBOL
+
+EXPORT_SYMBOL标签定义的函数或者符号对全部内核代码公开，不用修改内核代码就可以在用户的内核模块直接调用。
+用法：EXPORT_SYMBOL(my_pub_func)。 在预编译阶段会解析为：
+
+<pre class="brush: c">
+extern void *__crc_my_pub_func __attribute__((weak));
+
+static const unsigned long __kcrctab_my_pub_func __attribute__((__used__)) __attribute__((section("__kcrctab" ""), unused)) = (unsigned long) &__crc_my_pub_func; 
+
+static const char __kstrtab_my_pub_func[] __attribute__((section("__ksymtab_strings"))) = "" "my_pub_func"; 
+
+static const struct kernel_symbol __ksymtab_my_pub_func __attribute__((__used__)) __attribute__((section("__ksymtab" ""), unused)) = { (unsigned long)&my_pub_func, __kstrtab_my_pub_func };
+</pre>
+
+其中,先通过添加前缀__crc_来声明一个外部函数__crc_my_pub_func, 定义静态常量__kcrctab_my_pub_func 用来保存__crc_my_pub_func的地址, 定义静态常量__kstrtab_my_pub_func 用来保存my_pub_func字符串，再定义静态常量 __ksymtab_my_pub_func保存my_pub_func的地址和符号信息(名字字符串)__kstrtab_my_pub_func.**该符号对应的地址只有在insmod后才会确定**
+
+__ksymtab_my_pub_func会链接到*__ksymtab* section, *__ksymtab* section中的所有内容构成了内核导出的符号表，这个表在insmod 时候会用到。
+
+cat /proc/kallsyms会打印出内核当前的符号表。例如：
+    
+    d8834a24 t snd_free_sgbuf_pages [snd_page_alloc]
+    c0180d7a U create_proc_entry [snd_page_alloc]
+    d88341d8 T snd_dma_free_pages [snd_page_alloc]
+    c013d858 U __get_free_pages [snd_page_alloc]
+    d8834ab5 t snd_malloc_sgbuf_pages [snd_page_alloc]
+    c014f906 U kmem_cache_alloc [snd_page_alloc]
+    c0106dcd U dma_alloc_coherent [snd_page_alloc]
+
+其中第一列是该符号在内核地址空间中的地址，第二列是符号属性，小写表示局部符号， 大写表示全局符号，第三列表示符号字符串，这里只显示EXPORT_SYMBOL,EXPROT_SYMBOL_GPL处理过的符号。
+
+system.map内核符号文件。通过more /boot/System.map 可以查看内核符号列表。可以显示编译好内核后所有在内核中的符号，模块中的要另行查看。
+
+通过nm vmlinux也可以查看内核符号列表。
+
+通过nm module_name可以查看模块的符号列表。但是得到是相对地址，只有加载后才会分配绝对地址。
+比如：e1000模块，如果e1000中的符号经过EXPORT_SYMBOL处理，等加载后，
+我们可以通过more /boot/System.map和nm vmlinux命令查看到，但是没有EXPORT_SYMBOL的，目前不知道怎么查看
+
+下面例子验证EXPORT_SYMBOL：
+<pre class="brush: c">
+#include <linux/module.h>  
+#include <linux/kernel.h>  
+ 
+static int __init a_init_module(void)  
+{  
+    unsigned long *__kcrctab_per_cpu__hrtimer_bases = 0xc02678b4;  
+    unsigned char *__kstrtab_per_cpu__hrtimer_bases = 0xc026926b;  
+    struct kernel_symbol *__ksymtab_per_cpu__hrtimer_bases = 0xc0265018;  
+      
+    printk("__kcrctab_per_cpu__hrtimer_bases = %08x\n", *__kcrctab_per_cpu__hrtimer_bases);  
+    printk("__kstrtab_per_cpu__hrtimer_bases = %s\n", __kstrtab_per_cpu__hrtimer_bases);  
+    printk("__ksymtab_per_cpu__hrtimer_bases value = %08x, name = %s\n", __ksymtab_per_cpu__hrtimer_bases->value,\  
+        __ksymtab_per_cpu__hrtimer_bases->name);  
+      
+    return 0;  
+}  
+      
+static void __exit a_cleanup_module(void)  
+{  
+        printk("Bye, Bye\n");  
+}  
+module_init(a_init_module);  
+module_exit(a_cleanup_module);  
+
+</pre>
+
+makefile文件如下：
+<pre class="brush:c">
+#  
+# Makefile for hello.c file  
+#  
+KDIR:=/lib/modules/$(shell uname -r)/build  
+
+obj-m:=hello.o  
+  
+default:  
+     $(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules  
+clean:  
+     $(RM) .*.cmd *.mod.c *.o *.ko -r .tmp*  
+</pre>
+注：该makefile实现的就是模块的编译。更多模块相关内容看[这里](how_to_make_a_modules.html)
+
+make; insmod hello.ko之后通过dmesg的运行结果：
+
+    __kcrctab_per_cpu__hrtimer_bases = 1ac19564
+    __kstrtab_per_cpu__hrtimer_bases = per_cpu__hrtimer_bases
+    __ksymtab_per_cpu__hrtimer_bases value = c0279ea0, name = per_cpu__hrtimer_bases
+
+通过nm vmlinux | grep per_cpu__hrtimer_bases我们可以看到如下的对应关系：(可以先看下地址再编写测试代码)
+    
+    1ac19564 A __crc_per_cpu__hrtimer_bases
+    c02678b4 r __kcrctab_per_cpu__hrtimer_bases
+    c026926b r __kstrtab_per_cpu__hrtimer_bases
+    c0265018 r __ksymtab_per_cpu__hrtimer_bases
+    c0279ea0 d per_cpu__hrtimer_bases
+
+1. EXPORT_SYMBOL和EXPORT_SYMBOL_GPL的区别
+
+EXPORT_SYMBOL_GPL的符号必须要用MODULE_LICENSE("GPL")或者
+用MODULE_LICENSE("Dual BSD/GPL")之后才能在模块中引用。
+而且MODULE_LICENSE("char")中的char不可以是任意字符，否则错误和没有MODULE_LICENSE效果一样。
+
+
