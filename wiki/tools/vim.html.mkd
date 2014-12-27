@@ -10,7 +10,7 @@
 
 ###管理插件的插件 vim-pathogen
 
-这个插件用来安装和管理其他插件比较方便
+这个插件用来安装和管理其他插件比较方便 
 
 文件和安装方法在[这里](https://github.com/tpope/vim-pathogen)
  

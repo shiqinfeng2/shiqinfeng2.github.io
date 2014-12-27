@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="/style.css" type="text/css" />
 
 
-<title>cygwin的安装和使用</title>
 
 </head>
 
@@ -24,7 +23,7 @@
         <p class="header_subline">一切思考，都将在此记录</p>
         <p class="header_subline"><a href="/index.html">首页</a></p>
 </div>
-<h1>cygwin的安装和使用</h1>
+
 
  <!--if(title)-->
 
@@ -32,32 +31,26 @@
 <div id="TOC">
 <ul>
 <li><a href="#安装">安装</a></li>
-<li><a href="#安装apt-cyg">安装apt-cyg</a></li>
+<li><a href="#github简单配置">github简单配置</a></li>
+<li><a href="#创建github版本仓库">创建github版本仓库</a></li>
+<li><a href="#合并本地和远程的版本">合并本地和远程的版本</a></li>
 </ul>
 </div>
  <!--if(toc)-->
 
-<!---title:cygwin的安装和使用-->
-<p>不知道cygwin是干什么的？看下<a href="http://baike.baidu.com/view/3968.htm?fr=aladdin">百度百科</a>的介绍吧。</p>
+<!---github的安装和简单使用-->
 <h2 id="安装">安装</h2>
-<p>安装过程请百度，下面记录的是key points(和搭建个人wiki相关的)：</p>
-<ol style="list-style-type: decimal">
-<li><p>cygwin的下载地址： https://cygwin.com/install.html 根据操作系统选择32位版本或64位版本；</p></li>
-<li><p>安装时请选择国内的更新源镜像地址，或者手动添加一个。</p>
-<p>国内主要是 http://mirrors.163.com/cygwin/ 和 http://mirrors.sohu.com/cygwin/</p></li>
-<li><p>安装的组件包包括：</p></li>
-</ol>
-<ul>
-<li>gcc相关组件</li>
-<li>gdb相关组件</li>
-<li>wget工具</li>
-<li>curl工具</li>
-<li>make工具</li>
-<li>git工具</li>
-<li>vim工具</li>
-</ul>
-<h2 id="安装apt-cyg">安装apt-cyg</h2>
-<p>该工具是cygwin下的包管理工具， 一些在安装cygwin时没有安装上的应用可以运行该工具进行快速安装， 而不用再次运行setup.exe 勾选应用。 开源项目地址在<a href="https://github.com/transcode-open/apt-cyg">这里</a> ,内有软件下载和安装步骤和使用方法。</p>
+<p>在cygwin中已经安装。</p>
+<h2 id="github简单配置">github简单配置</h2>
+<pre><code>git config --global.user.name &quot;NAME&quot;
+git config --global.user.email &quot;shi.qinfeng@infogence.com.cn&quot;</code></pre>
+<h2 id="创建github版本仓库">创建github版本仓库</h2>
+<pre><code>如果已有版本仓库，clone到本地即可：
+git clone https://github.com/xxx.github.io.get 该地址是版本仓库中提供的链接地址。</code></pre>
+<h2 id="合并本地和远程的版本">合并本地和远程的版本</h2>
+<p>如果需要在多台电脑上编辑wiki，在每次编辑wiki的时候都先update本地版本到最新版本，这样在提交修改时不会有问题。但是如果之前在其他地方提交过修改，在本地编辑之前忘记update了，而且还已经修改了wiki，这时文件是无法提交的，需要把最新的远程版本和本地版本先合并，然后在提交更新：</p>
+<pre><code>git fetch origin master：tmp  //获取远程最新版本到本地临时目录tmp
+git merge tmp                 //和本地的修改进行合并</code></pre>
 
 <!--Baidu tongji-->
 <script>

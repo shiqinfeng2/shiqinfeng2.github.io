@@ -1,0 +1,24 @@
+<!---github的安装和简单使用-->
+
+##安装
+
+在cygwin中已经安装。
+
+## github简单配置
+
+    git config --global.user.name "NAME"
+    git config --global.user.email "shi.qinfeng@infogence.com.cn"
+
+## 创建github版本仓库
+
+    如果已有版本仓库，clone到本地即可：
+    git clone https://github.com/xxx.github.io.get 该地址是版本仓库中提供的链接地址。
+
+## 合并本地和远程的版本
+
+如果需要在多台电脑上编辑wiki，在每次编辑wiki的时候都先update本地版本到最新版本，这样在提交修改时不会有问题。但是如果之前在其他地方提交过修改，在本地编辑之前忘记update了，而且还已经修改了wiki，这时文件是无法提交的，需要把最新的远程版本和本地版本先合并，然后在提交更新：
+    
+    git fetch origin master：tmp  //获取远程最新版本到本地临时目录tmp
+    git merge tmp                 //和本地的修改进行合并
+
+

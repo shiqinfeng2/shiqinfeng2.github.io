@@ -2,10 +2,18 @@
 
 ##工具集1
 
+这个工具集主要是搭建wiki时用到的工具软件
+
 * [cygwin的安装和使用](install_and_use_cygwin.html)
 * [make工具](use_make.html)
 * [vim软件](vim.html)
-* [git/github]()
+
+    这里内容不少，如果使用楼主现成的.vimrc配置文件，里面的一些插件和目录必须安装和创建：
+    1. 在用户目录下设置备份目录： cd ~/.vim ; mkdir backup
+    1. 插件安装： vim-pathogen；NerdTree; 
+    1. anyelse?
+
+* [git/github](use_github.html)
 * [vimwiki安装和使用](install_vimwiki.html)
 * [pandoc安装和使用](install_pandoc.html)
 

@@ -10,13 +10,21 @@ EXPORT_SYMBOL标签定义的函数或者符号对全部内核代码公开，不�
 用法：EXPORT_SYMBOL(my_pub_func)。 在预编译阶段会解析为：
 
 <pre class="brush: c">
+
 extern void *__crc_my_pub_func __attribute__((weak));
 
-static const unsigned long __kcrctab_my_pub_func __attribute__((__used__)) __attribute__((section("__kcrctab" ""), unused)) = (unsigned long) &__crc_my_pub_func; 
+static const unsigned long __kcrctab_my_pub_func 
+    __attribute__((__used__)) __attribute__((section("__kcrctab" ""), unused)) = 
+    (unsigned long) &__crc_my_pub_func; 
 
-static const char __kstrtab_my_pub_func[] __attribute__((section("__ksymtab_strings"))) = "" "my_pub_func"; 
+static const char __kstrtab_my_pub_func[] 
+    __attribute__((section("__ksymtab_strings"))) = 
+    "" "my_pub_func"; 
 
-static const struct kernel_symbol __ksymtab_my_pub_func __attribute__((__used__)) __attribute__((section("__ksymtab" ""), unused)) = { (unsigned long)&my_pub_func, __kstrtab_my_pub_func };
+static const struct kernel_symbol __ksymtab_my_pub_func 
+    __attribute__((__used__)) __attribute__((section("__ksymtab" ""), unused)) = 
+    { (unsigned long)&my_pub_func, __kstrtab_my_pub_func };
+
 </pre>
 
 其中,先通过添加前缀__crc_来声明一个外部函数__crc_my_pub_func, 定义静态常量__kcrctab_my_pub_func 用来保存__crc_my_pub_func的地址, 定义静态常量__kstrtab_my_pub_func 用来保存my_pub_func字符串，再定义静态常量 __ksymtab_my_pub_func保存my_pub_func的地址和符号信息(名字字符串)__kstrtab_my_pub_func.**该符号对应的地址只有在insmod后才会确定**
@@ -44,9 +52,11 @@ system.map内核符号文件。通过more /boot/System.map 可以查看内核符
 我们可以通过more /boot/System.map和nm vmlinux命令查看到，但是没有EXPORT_SYMBOL的，目前不知道怎么查看
 
 下面例子验证EXPORT_SYMBOL：
+
 <pre class="brush: c">
-#include <linux/module.h>  
-#include <linux/kernel.h>  
+
+    #include <linux/module.h>  
+    #include <linux/kernel.h>  
  
 static int __init a_init_module(void)  
 {  
@@ -56,9 +66,8 @@ static int __init a_init_module(void)
       
     printk("__kcrctab_per_cpu__hrtimer_bases = %08x\n", *__kcrctab_per_cpu__hrtimer_bases);  
     printk("__kstrtab_per_cpu__hrtimer_bases = %s\n", __kstrtab_per_cpu__hrtimer_bases);  
-    printk("__ksymtab_per_cpu__hrtimer_bases value = %08x, name = %s\n", __ksymtab_per_cpu__hrtimer_bases->value,\  
-        __ksymtab_per_cpu__hrtimer_bases->name);  
-      
+    printk("__ksymtab_per_cpu__hrtimer_bases value = %08x, name = %s\n", __ksymtab_per_cpu__hrtimer_bases->value, 
+        __ksymtab_per_cpu__hrtimer_bases->name);      
     return 0;  
 }  
       
@@ -66,13 +75,16 @@ static void __exit a_cleanup_module(void)
 {  
         printk("Bye, Bye\n");  
 }  
-module_init(a_init_module);  
-module_exit(a_cleanup_module);  
+
+    module_init(a_init_module);  
+    module_exit(a_cleanup_module);  
 
 </pre>
 
 makefile文件如下：
+
 <pre class="brush:c">
+
 #  
 # Makefile for hello.c file  
 #  
@@ -84,7 +96,9 @@ default:
      $(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules  
 clean:  
      $(RM) .*.cmd *.mod.c *.o *.ko -r .tmp*  
+
 </pre>
+
 注：该makefile实现的就是模块的编译。更多模块相关内容看[这里](how_to_make_a_modules.html)
 
 make; insmod hello.ko之后通过dmesg的运行结果：

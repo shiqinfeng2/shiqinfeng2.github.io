@@ -1,2 +1,3 @@
-.vimrc Â·¾¶£º ~/.vimrc
-colors/ Â·¾¶£º ~/.vim/colors/
+.vimrc ¡¤???? ~/.vimrc
+colors/ ¡¤???? ~/.vim/colors/
+backup/ ¡¤???? ~/.vim/backup/
