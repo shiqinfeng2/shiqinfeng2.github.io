@@ -79,7 +79,11 @@
 <h4 id="samba安装和配置">samba安装和配置</h4>
 <p><a href="http://blog.csdn.net/xxuanwan/article/details/2891523">原文出处</a></p>
 <p>配置好以后，如果出现ROOT没有写的权限，可能是以下两个原因：</p>
-<p>默认开启selinux，关了即可： setenforce 0　　 保存配置： vi /etc/sysconfig/selinux 修改SELINUX=disabled</p>
+<p>默认开启selinux，关了即可：</p>
+<pre><code>setenforce 0　　</code></pre>
+<p>保存配置：</p>
+<pre><code>vi /etc/sysconfig/selinux
+修改SELINUX=disabled</code></pre>
 <h3 id="linux内核">linux内核</h3>
 <h4 id="协议栈">协议栈</h4>
 <ul>
@@ -93,6 +97,10 @@
 <h3 id="驱动开发">驱动开发</h3>
 <p><a href="index.html">回到目录</a></p>
 <h3 id="网络协议">网络协议</h3>
+<h4 id="tcpip协议">TCP/IP协议</h4>
+<ul>
+<li><a href="wiki/networks/tcp_ip.html">tcp/ip头的格式定义</a></li>
+</ul>
 <p><a href="index.html">回到目录</a></p>
 <h3 id="计算机理论与应用">计算机理论与应用</h3>
 <p><a href="index.html">回到目录</a></p>

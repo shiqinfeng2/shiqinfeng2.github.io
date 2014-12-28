@@ -43,8 +43,11 @@
 配置好以后，如果出现ROOT没有写的权限，可能是以下两个原因：
 
 默认开启selinux，关了即可：
+    
     setenforce 0　　
+
 保存配置：
+
     vi /etc/sysconfig/selinux
     修改SELINUX=disabled
 
@@ -65,6 +68,10 @@
 [回到目录](index.html)
 
 ###网络协议
+#### TCP/IP协议
+
+* [tcp/ip头的格式定义](wiki/networks/tcp_ip.html)
+
 [回到目录](index.html)
 
 ###计算机理论与应用
