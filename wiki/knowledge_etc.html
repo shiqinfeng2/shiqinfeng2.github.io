@@ -78,8 +78,8 @@ c0106dcd U dma_alloc_coherent [snd_page_alloc]</code></pre>
 <p>下面例子验证EXPORT_SYMBOL：</p>
 <pre class="brush: c">
 
-    #include <linux/module.h>  
-    #include <linux/kernel.h>  
+#include < linux/module.h >  
+#include < linux/kernel.h >  
  
 static int __init a_init_module(void)  
 {  
@@ -89,7 +89,8 @@ static int __init a_init_module(void)
       
     printk("__kcrctab_per_cpu__hrtimer_bases = %08x\n", *__kcrctab_per_cpu__hrtimer_bases);  
     printk("__kstrtab_per_cpu__hrtimer_bases = %s\n", __kstrtab_per_cpu__hrtimer_bases);  
-    printk("__ksymtab_per_cpu__hrtimer_bases value = %08x, name = %s\n", __ksymtab_per_cpu__hrtimer_bases->value, 
+    printk("__ksymtab_per_cpu__hrtimer_bases value = %08x, name = %s\n", 
+        __ksymtab_per_cpu__hrtimer_bases->value, 
         __ksymtab_per_cpu__hrtimer_bases->name);      
     return 0;  
 }  

@@ -1,1 +1,37 @@
-to be continue...
+<!---C语言-->
+
+
+## 小技巧
+
+### 定义数组初始化为默认值
+
+<pre class="brush:c">
+
+//一维数组的初始化
+    uint64_t priorities[CVMX_PKO_NQ_PER_PORT_MAX] = {
+           
+           [0 ... CVMX_PKO_NQ_PER_PORT_MAX - 1] = 8 
+           
+    };
+
+//二维数组的初始化
+static CVMX_SHARED struct cvmx_cfg_port_param cvmx_cfg_port
+
+    [CVMX_HELPER_CFG_MAX_IFACE][CVMX_HELPER_CFG_MAX_PORT_PER_IFACE] =
+
+        {[0 ... CVMX_HELPER_CFG_MAX_IFACE - 1] =
+
+             {[0 ... CVMX_HELPER_CFG_MAX_PORT_PER_IFACE - 1] =
+                {CVMX_HELPER_CFG_INVALID_VALUE,
+
+                 CVMX_HELPER_CFG_INVALID_VALUE,
+
+                 CVMX_HELPER_CFG_INVALID_VALUE,
+
+                 CVMX_HELPER_CFG_INVALID_VALUE}
+             }
+        };
+
+</pre>
+
+
