@@ -1,15 +1,18 @@
 <!---TCP/IP头部定义-->
 
 4层网络模型常见协议：
+
 ![net_proto](net_proto.gif)
 
 IP头部：
+
 ![ip](ip.gif)
 
 TCP头部：
+
 ![tcp](tcp.gif)
 
-以太头定义：
+各层协议头定义：
 <pre class="brush: c">
 
 #ifndef LITTLE_ENDIAN  

@@ -74,6 +74,8 @@
 
 [回到目录](index.html)
 
+###CPU和内存
+1. [内存屏障](wiki/CPUnMemory/memory_barrier.html)
 ###计算机理论与应用
 [回到目录](index.html)
 
@@ -86,4 +88,8 @@
 ###他人的经验总结
 [这里](wiki/good_article/navigation.html)收集一些平时发现的自觉比较不错的文章，生怕错过就找不到了，因此都收集在这里。[回到目录](index.html)
 
+一些个牛人们的链接
+    * kouu's home http://hi.baidu.com/_kouu 关键词：linux内核; linux网络; hadoop; 
+    * 青春作赋，皓首穷经 http://www.kernelchina.org/blog/apple 关键词：linux内核; 网络； 算法；
+    * A Geek's Page http://wangcong.org/blog/ 关键词：linux; linux内核; 
 
