@@ -37,6 +37,7 @@
 <li><a href="#厚积薄发-----知识积累">厚积薄发 ----知识积累</a><ul>
 <li><a href="#暂无分类的">暂无分类的</a></li>
 <li><a href="#编程语言和语法">编程语言和语法</a></li>
+<li><a href="#linux应用">linux应用</a></li>
 <li><a href="#linux内核">linux内核</a></li>
 <li><a href="#驱动开发">驱动开发</a></li>
 <li><a href="#网络协议">网络协议</a></li>
@@ -56,19 +57,37 @@
 <h1 id="收集箱">收集箱</h1>
 <p>所有的知识碎片和疑问都先扔进<a href="wiki/dropbox/dropbox.html">这里</a>,有空就整理。<a href="index.html">回到目录</a></p>
 <h1 id="知识wiki">知识wiki</h1>
-<p><a href="wiki/knowledge_wiki/navigation.html">这里</a>以wiki形式组织知识，以问答的形式把知识关联在一起。<a href="index.html">回到目录</a></p>
+<ol style="list-style-type: decimal">
+<li><a href="knowledge_wiki/how_to_build_free_wiki_web.html">这个个人wiki是如何生成的?</a></li>
+<li><a href="wiki/knowledge_wiki/how_to_use_wiki.html">个人wiki的使用教程</a></li>
+</ol>
+<p><a href="index.html">回到目录</a></p>
 <h1 id="知识体系归档">知识体系归档</h1>
-<p>这里采用树状结构整理<strong>所有知识</strong>，不区分原创和转载，转载的尽量修改后以自己的理解表达出来。<a href="index.html">回到目录</a></p>
+<p>这里采用树状结构整理<strong>所有知识</strong>，不区分原创和转载. <a href="index.html">回到目录</a></p>
 <h2 id="厚积薄发-----知识积累">厚积薄发 ----知识积累</h2>
 <p>为什么叫厚积薄发？热门技术要学，基本功也很重要，机会总是留给有准备的人。<a href="index.html">回到目录</a></p>
 <h3 id="暂无分类的">暂无分类的</h3>
 <p><a href="wiki/knowledge_etc.html">请猛戳这里</a></p>
 <h3 id="编程语言和语法">编程语言和语法</h3>
-<p>和语言相关的都在<a href="wiki/prog/navigation.html">这里</a>。 包括编程语言、脚本语言、markdown语法、makefile语法等。 <a href="index.html">回到目录</a></p>
-<h3 id="linux内核">linux内核</h3>
+<p>和语言相关的都在<a href="wiki/prog/navigation.html">这里</a>。 包括C语言、JAVA、shell语法、markdown语法、makefile语法等。</p>
+<p><a href="index.html">回到目录</a></p>
+<h3 id="linux应用">linux应用</h3>
+<h4 id="常用命令速查">常用命令速查</h4>
 <ul>
-<li><a href="wiki/linux-kernel/protocol.html">协议栈</a></li>
-<li><a href="wiki/linux-kernel/fs.html">文件系统</a></li>
+<li><a href="wiki/linux/top_cmd.html">linux常见命令</a></li>
+</ul>
+<h4 id="samba安装和配置">samba安装和配置</h4>
+<p><a href="http://blog.csdn.net/xxuanwan/article/details/2891523">原文出处</a></p>
+<p>配置好以后，如果出现ROOT没有写的权限，可能是以下两个原因：</p>
+<p>默认开启selinux，关了即可： setenforce 0　　 保存配置： vi /etc/sysconfig/selinux 修改SELINUX=disabled</p>
+<h3 id="linux内核">linux内核</h3>
+<h4 id="协议栈">协议栈</h4>
+<ul>
+<li><a href="wiki/linux-kernel/protocol.html">网络协议栈</a></li>
+</ul>
+<h4 id="文件系统">文件系统</h4>
+<ul>
+<li><a href="wiki/linux-kernel/vfs.html">虚拟文件系统VFS</a></li>
 </ul>
 <p><a href="index.html">回到目录</a></p>
 <h3 id="驱动开发">驱动开发</h3>
