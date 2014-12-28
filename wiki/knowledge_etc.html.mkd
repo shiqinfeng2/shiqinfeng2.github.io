@@ -23,7 +23,11 @@ static const char __kstrtab_my_pub_func[]
 
 static const struct kernel_symbol __ksymtab_my_pub_func 
     __attribute__((__used__)) __attribute__((section("__ksymtab" ""), unused)) = 
-    { (unsigned long)&my_pub_func, __kstrtab_my_pub_func };
+    { 
+        (unsigned long)&my_pub_func, __kstrtab_my_pub_func 
+        
+    };
+
 
 </pre>
 
@@ -77,8 +81,8 @@ static void __exit a_cleanup_module(void)
         printk("Bye, Bye\n");  
 }  
 
-    module_init(a_init_module);  
-    module_exit(a_cleanup_module);  
+module_init(a_init_module);  
+module_exit(a_cleanup_module);  
 
 </pre>
 

@@ -58,7 +58,11 @@ static const char __kstrtab_my_pub_func[]
 
 static const struct kernel_symbol __ksymtab_my_pub_func 
     __attribute__((__used__)) __attribute__((section("__ksymtab" ""), unused)) = 
-    { (unsigned long)&my_pub_func, __kstrtab_my_pub_func };
+    { 
+        (unsigned long)&my_pub_func, __kstrtab_my_pub_func 
+        
+    };
+
 
 </pre>
 <p>其中,先通过添加前缀__crc_来声明一个外部函数__crc_my_pub_func, 定义静态常量__kcrctab_my_pub_func 用来保存__crc_my_pub_func的地址, 定义静态常量__kstrtab_my_pub_func 用来保存my_pub_func字符串，再定义静态常量 __ksymtab_my_pub_func保存my_pub_func的地址和符号信息(名字字符串)__kstrtab_my_pub_func.<strong>该符号对应的地址只有在insmod后才会确定</strong></p>
@@ -100,8 +104,8 @@ static void __exit a_cleanup_module(void)
         printk("Bye, Bye\n");  
 }  
 
-    module_init(a_init_module);  
-    module_exit(a_cleanup_module);  
+module_init(a_init_module);  
+module_exit(a_cleanup_module);  
 
 </pre>
 <p>makefile文件如下：</p>

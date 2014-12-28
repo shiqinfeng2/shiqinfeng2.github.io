@@ -9,10 +9,14 @@
 所有的知识碎片和疑问都先扔进[这里](wiki/dropbox/dropbox.html),有空就整理。[回到目录](index.html)
 
 #知识wiki
-[这里](wiki/knowledge_wiki/navigation.html)以wiki形式组织知识，以问答的形式把知识关联在一起。[回到目录](index.html)
+
+1. [这个个人wiki是如何生成的?](knowledge_wiki/how_to_build_free_wiki_web.html)
+1. [个人wiki的使用教程](wiki/knowledge_wiki/how_to_use_wiki.html) 
+
+[回到目录](index.html)
 
 #知识体系归档
-这里采用树状结构整理**所有知识**，不区分原创和转载，转载的尽量修改后以自己的理解表达出来。[回到目录](index.html)
+这里采用树状结构整理**所有知识**，不区分原创和转载. [回到目录](index.html)
 
 ##厚积薄发 ----知识积累
 为什么叫厚积薄发？热门技术要学，基本功也很重要，机会总是留给有准备的人。[回到目录](index.html)
@@ -22,13 +26,38 @@
 
 ###编程语言和语法
 和语言相关的都在[这里](wiki/prog/navigation.html)。
-    包括编程语言、脚本语言、markdown语法、makefile语法等。
+    包括C语言、JAVA、shell语法、markdown语法、makefile语法等。
+
 [回到目录](index.html)
+
+###linux应用
+
+#### 常用命令速查
+
+* [linux常见命令](wiki/linux/top_cmd.html)
+
+#### samba安装和配置
+  
+[原文出处](http://blog.csdn.net/xxuanwan/article/details/2891523)
+
+配置好以后，如果出现ROOT没有写的权限，可能是以下两个原因：
+
+默认开启selinux，关了即可：
+    setenforce 0　　
+保存配置：
+    vi /etc/sysconfig/selinux
+    修改SELINUX=disabled
+
 
 ###linux内核
 
-* [协议栈](wiki/linux-kernel/protocol.html)
-* [文件系统](wiki/linux-kernel/fs.html)
+#### 协议栈
+
+* [网络协议栈](wiki/linux-kernel/protocol.html)
+
+#### 文件系统
+
+* [虚拟文件系统VFS](wiki/linux-kernel/vfs.html)
 
 [回到目录](index.html)
 
