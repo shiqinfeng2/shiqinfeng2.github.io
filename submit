@@ -1,4 +1,6 @@
 #/bin/bash
+rm index.html.mkd
+ln -n index.mkd  index.html.mkd
 make
 git add *
 git commit -a -m "$1"
