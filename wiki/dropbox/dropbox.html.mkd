@@ -1,2 +1,35 @@
 
-new
+#内核启动
+
+内核启动是从start_kernel开始的。
+
+
+#字符设备驱动初始化
+
+##字符设备的注册
+
+有两种设备注册的方法：
+
+1. 注册字符设备，在系统初始化的时候；默认从设备号范围是0-255
+    
+    register_chrdev(major,name,fops);
+        __register_chrdev_region(major, 0, 256, name); //注册从设备号范围0-256
+        cdev_alloc()                                //申请一个cdev
+        根据入参 配置owner和ops；
+        kobject_set_name(&cdev->kobj, "%s", name);    //设置kobject的名字
+        cdev_add(cdev, MKDEV(cd->major, 0), 256);   //添加256个从设备到cdev_map
+
+1. 另一种注册方法是对具体设备注册或者分配一个设备号范围。
+    
+    注册指定范围的从设备号： register_chrdev_region
+    由内核自动选择合适的范围：alloc_chedev_refion
+
+* cdev_init 初始化一个cdev的实例
+    
+    cdev_init(
+        struct cdev *cdev,            //各个cdev的全局变量地址
+        const struct file_operations *fops) //设备操作集
+    kobject_set_name
+    cdev_add
+
+
